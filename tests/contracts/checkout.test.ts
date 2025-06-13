@@ -218,6 +218,7 @@ describe('Checkout Contracts', () => {
     test('should validate register invoice input', () => {
       const input = {
         checkoutId: 'checkout_123',
+        nodeId: 'node_123',
         invoice: 'lnbc1500n1pdn4czkpp5ugdqer05qrrxuchrzkcue94th9w2xzasp9qm7d0yqcgqv5p3qjnjn',
         paymentHash: '1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef',
         invoiceExpiresAt: new Date('2024-01-01T01:00:00Z'),
@@ -253,8 +254,10 @@ describe('Checkout Contracts', () => {
   describe('PaymentReceivedInputSchema', () => {
     test('should validate payment received input', () => {
       const input = {
+        payments: [{
         paymentHash: '1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef',
         amountSats: 1500,
+        }],
       };
 
       const result = PaymentReceivedInputSchema.safeParse(input);
@@ -333,14 +336,17 @@ describe('Checkout Contracts', () => {
 
       const registerInput = {
         checkoutId: 'checkout_123',
+        nodeId: 'node_123',
         invoice: 'lnbc123...',
         paymentHash: 'hash123',
         invoiceExpiresAt: new Date(),
       };
 
       const paymentInput = {
+        payments: [{
         paymentHash: 'hash123',
         amountSats: 1500,
+        }],
       };
 
       // These should all parse successfully
