@@ -46,6 +46,7 @@ const BaseCheckoutSchema = z.object({
 	netAmount: z.number().nullable(),
 	taxAmount: z.number().nullable(),
 	invoiceAmountSats: z.number().nullable(),
+	invoiceScid: z.string().nullable(),
 	btcPrice: z.number().nullable(),
 	invoice: BaseInvoiceSchema.nullable(),
 });

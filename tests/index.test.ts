@@ -76,6 +76,7 @@ describe('API Contract Index', () => {
         netAmount: null,
         taxAmount: null,
         invoiceAmountSats: null,
+        invoiceScid: null,
         btcPrice: null,
         invoice: null,
       };
@@ -129,6 +130,8 @@ describe('API Contract Index', () => {
       };
 
       const registerInvoice: RegisterInvoice = {
+        nodeId: 'node_123',
+        scid: 'scid_123',
         checkoutId: 'checkout_123',
         invoice: 'lnbc123...',
         paymentHash: 'hash123',
@@ -136,15 +139,17 @@ describe('API Contract Index', () => {
       };
 
       const paymentReceived: PaymentReceived = {
-        paymentHash: 'hash123',
-        amountSats: 1500,
+        payments: [{
+          paymentHash: 'hash123',
+          amountSats: 1500,
+        }],
       };
 
       // Basic type checks - these should not throw TypeScript errors
       expect(typeof createCheckout.amount).toBe('number');
       expect(typeof confirmCheckout.checkoutId).toBe('string');
       expect(typeof registerInvoice.invoice).toBe('string');
-      expect(typeof paymentReceived.amountSats).toBe('number');
+      expect(typeof paymentReceived.payments[0].amountSats).toBe('number');
     });
   });
 
@@ -166,6 +171,8 @@ describe('API Contract Index', () => {
       };
       
       const registerInput: RegisterInvoice = {
+        nodeId: 'node_123',
+        scid: 'scid_123',
         checkoutId: 'checkout_123',
         invoice: 'lnbc123...',
         paymentHash: 'hash123',
@@ -173,15 +180,17 @@ describe('API Contract Index', () => {
       };
       
       const paymentInput: PaymentReceived = {
-        paymentHash: 'hash123',
-        amountSats: 1500,
+        payments: [{
+          paymentHash: 'hash123',
+          amountSats: 1500,
+        }],
       };
 
       // 2. Verify types are consistent with contracts
       expect(typeof createInput.amount).toBe('number');
       expect(typeof confirmInput.checkoutId).toBe('string');
       expect(typeof registerInput.invoice).toBe('string');
-      expect(typeof paymentInput.amountSats).toBe('number');
+      expect(typeof paymentInput.payments[0].amountSats).toBe('number');
       
       // 3. Verify contracts exist and are properly structured
       expect(contract.checkout.create).toBeDefined();

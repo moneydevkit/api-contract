@@ -34,6 +34,7 @@ const baseCheckoutData = {
   netAmount: null,
   taxAmount: null,
   invoiceAmountSats: null,
+  invoiceScid: null,
   btcPrice: null,
   invoice: null,
 };
