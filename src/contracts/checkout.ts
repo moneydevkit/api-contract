@@ -3,6 +3,7 @@ import { z } from "zod";
 import { CheckoutSchema } from "../schemas/checkout";
 
 export const CreateCheckoutInputSchema = z.object({
+	nodeId: z.string(),
 	amount: z.number().optional(),
 	currency: z.string().optional(),
 	products: z.array(z.string()).optional(),

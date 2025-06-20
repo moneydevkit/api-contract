@@ -119,6 +119,7 @@ describe('API Contract Index', () => {
     test('should be able to use exported types', () => {
       // This test ensures that the types are properly exported and can be used
       const createCheckout: CreateCheckout = {
+        nodeId: 'node_123',
         amount: 1000,
         currency: 'USD',
         customerEmail: 'test@example.com',
@@ -159,6 +160,7 @@ describe('API Contract Index', () => {
       
       // 1. Create valid input objects
       const createInput: CreateCheckout = {
+        nodeId: 'node_123',
         amount: 1000,
         currency: 'USD',
         products: ['product_1'],

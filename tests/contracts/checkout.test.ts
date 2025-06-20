@@ -47,13 +47,16 @@ describe('Checkout Contracts', () => {
 
   describe('CreateCheckoutInputSchema', () => {
     test('should validate minimal create checkout input', () => {
-      const input = {};
+      const input = {
+        nodeId: 'node_123',
+      };
       const result = CreateCheckoutInputSchema.safeParse(input);
       expect(result.success).toBe(true);
     });
 
     test('should validate create checkout input with all fields', () => {
       const input = {
+        nodeId: 'node_123',
         amount: 1000,
         currency: 'USD',
         products: ['product_1', 'product_2'],
@@ -112,6 +115,7 @@ describe('Checkout Contracts', () => {
 
     test('should validate IPv4 address', () => {
       const input = {
+        nodeId: 'node_123',
         customerIpAddress: '192.168.1.1',
       };
 
@@ -121,6 +125,7 @@ describe('Checkout Contracts', () => {
 
     test('should validate IPv6 address', () => {
       const input = {
+        nodeId: 'node_123',
         customerIpAddress: '2001:0db8:85a3:0000:0000:8a2e:0370:7334',
       };
 
@@ -325,6 +330,7 @@ describe('Checkout Contracts', () => {
     test('should have consistent types between input schemas and exported types', () => {
       // This test ensures that the exported types match the actual schemas
       const createInput = {
+        nodeId: 'node_123',
         amount: 1000,
         currency: 'USD',
         customerEmail: 'test@example.com',
