@@ -44,6 +44,7 @@ export const ApplyDiscountCodeInputSchema = z.object({
 
 export const RegisterInvoiceInputSchema = z.object({
 	nodeId: z.string(),
+	scid: z.string(),
 	checkoutId: z.string(),
 	invoice: z.string(),
 	paymentHash: z.string(),
