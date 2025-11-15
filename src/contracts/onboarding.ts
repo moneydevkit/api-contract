@@ -1,16 +1,18 @@
 import { oc } from "@orpc/contract";
-import { z } from "zod";
+import type { z } from "zod";
 import {
-	StartDeviceAuthInputSchema,
-	StartDeviceAuthOutputSchema,
-	PollDeviceAuthInputSchema,
-	PollDeviceAuthOutputSchema,
 	BootstrapInputSchema,
 	BootstrapOutputSchema,
+	PollDeviceAuthInputSchema,
+	PollDeviceAuthOutputSchema,
+	StartDeviceAuthInputSchema,
+	StartDeviceAuthOutputSchema,
 } from "../schemas/onboarding";
 
 export type StartDeviceAuth = z.infer<typeof StartDeviceAuthInputSchema>;
-export type StartDeviceAuthResponse = z.infer<typeof StartDeviceAuthOutputSchema>;
+export type StartDeviceAuthResponse = z.infer<
+	typeof StartDeviceAuthOutputSchema
+>;
 export type PollDeviceAuth = z.infer<typeof PollDeviceAuthInputSchema>;
 export type PollDeviceAuthResponse = z.infer<typeof PollDeviceAuthOutputSchema>;
 export type BootstrapOnboarding = z.infer<typeof BootstrapInputSchema>;
