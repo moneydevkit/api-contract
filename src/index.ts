@@ -9,9 +9,7 @@ export type {
 	BootstrapOnboardingResponse,
 } from "./contracts/onboarding";
 
-export type {
-	StartDeviceAuth as StartDeviceAuthInput,
-} from "./contracts/onboarding";
+export type { StartDeviceAuth as StartDeviceAuthInput } from "./contracts/onboarding";
 export { CheckoutSchema } from "./schemas/checkout";
 export type {
 	CreateCheckout,
