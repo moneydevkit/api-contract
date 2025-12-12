@@ -270,6 +270,20 @@ describe('Checkout Contracts', () => {
       expect(result.success).toBe(true);
     });
 
+    test('should allow sandbox flag on payment', () => {
+      const input = {
+        payments: [{
+          paymentHash: 'hash-sandbox',
+          amountSats: 1500,
+          sandbox: true,
+        }],
+      };
+
+      const result = PaymentReceivedInputSchema.safeParse(input);
+      expect(result.success).toBe(true);
+      expect(result.success && result.data.payments[0]?.sandbox).toBe(true);
+    });
+
     test('should reject without paymentHash', () => {
       const input = {
         amountSats: 1500,

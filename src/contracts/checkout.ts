@@ -57,6 +57,7 @@ export const PaymentReceivedInputSchema = z.object({
 		z.object({
 			paymentHash: z.string(),
 			amountSats: z.number(),
+			sandbox: z.boolean().default(false),
 		}),
 	),
 });
