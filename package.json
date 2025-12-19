@@ -1,6 +1,6 @@
 {
   "name": "@moneydevkit/api-contract",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "API Contract for moneydevkit",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
