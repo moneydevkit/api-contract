@@ -1,4 +1,4 @@
-import { err, ok, type Result } from "../lib/utils.js";
+import { type Result, err, ok } from "../lib/utils.js";
 
 export const MAX_METADATA_SIZE_BYTES = 1024; // 1KB
 export const MAX_KEY_LENGTH = 100;
