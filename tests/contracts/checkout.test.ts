@@ -132,6 +132,90 @@ describe('Checkout Contracts', () => {
       const result = CreateCheckoutInputSchema.safeParse(input);
       expect(result.success).toBe(true);
     });
+
+    test('should validate create checkout with customerMetadata', () => {
+      const input = {
+        nodeId: 'node_123',
+        customerMetadata: {
+          userId: 'user_123',
+          plan: 'pro',
+          accountRef: 'acct_456',
+        },
+      };
+
+      const result = CreateCheckoutInputSchema.safeParse(input);
+      expect(result.success).toBe(true);
+    });
+
+    test('should reject customerMetadata with non-string values', () => {
+      const input = {
+        nodeId: 'node_123',
+        customerMetadata: {
+          userId: 'user_123',
+          count: 42, // number, not string
+        },
+      };
+
+      const result = CreateCheckoutInputSchema.safeParse(input);
+      expect(result.success).toBe(false);
+    });
+
+    test('should reject customerMetadata values over 500 characters', () => {
+      const input = {
+        nodeId: 'node_123',
+        customerMetadata: {
+          longValue: 'x'.repeat(501),
+        },
+      };
+
+      const result = CreateCheckoutInputSchema.safeParse(input);
+      expect(result.success).toBe(false);
+    });
+
+    test('should accept customerMetadata values at exactly 500 characters', () => {
+      const input = {
+        nodeId: 'node_123',
+        customerMetadata: {
+          longValue: 'x'.repeat(500),
+        },
+      };
+
+      const result = CreateCheckoutInputSchema.safeParse(input);
+      expect(result.success).toBe(true);
+    });
+
+    test('should reject customerMetadata with more than 50 keys', () => {
+      const metadata: Record<string, string> = {};
+      for (let i = 0; i < 51; i++) {
+        metadata[`key_${i}`] = `value_${i}`;
+      }
+
+      const input = {
+        nodeId: 'node_123',
+        customerMetadata: metadata,
+      };
+
+      const result = CreateCheckoutInputSchema.safeParse(input);
+      expect(result.success).toBe(false);
+      if (!result.success) {
+        expect(result.error.issues[0].message).toContain('50 keys');
+      }
+    });
+
+    test('should accept customerMetadata with exactly 50 keys', () => {
+      const metadata: Record<string, string> = {};
+      for (let i = 0; i < 50; i++) {
+        metadata[`key_${i}`] = `value_${i}`;
+      }
+
+      const input = {
+        nodeId: 'node_123',
+        customerMetadata: metadata,
+      };
+
+      const result = CreateCheckoutInputSchema.safeParse(input);
+      expect(result.success).toBe(true);
+    });
   });
 
   describe('ConfirmCheckoutInputSchema', () => {
@@ -186,6 +270,25 @@ describe('Checkout Contracts', () => {
 
       const result = ConfirmCheckoutInputSchema.safeParse(input);
       expect(result.success).toBe(true);
+    });
+
+    test('should strip customerMetadata from confirm input (security: browser-callable)', () => {
+      // customerMetadata is intentionally NOT accepted at confirm time
+      // because confirm is browser-callable and we don't want malicious payers
+      // to overwrite merchant-set metadata keys like "userId", "plan", etc.
+      const input = {
+        checkoutId: 'checkout_123',
+        customerMetadata: {
+          maliciousKey: 'attacker_value',
+        },
+      };
+
+      const result = ConfirmCheckoutInputSchema.safeParse(input);
+      expect(result.success).toBe(true);
+      if (result.success) {
+        // customerMetadata should be stripped since it's not in the schema
+        expect(result.data).not.toHaveProperty('customerMetadata');
+      }
     });
   });
 

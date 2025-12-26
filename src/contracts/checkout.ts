@@ -2,6 +2,25 @@ import { oc } from "@orpc/contract";
 import { z } from "zod";
 import { CheckoutSchema } from "../schemas/checkout";
 
+/**
+ * Schema for customer metadata values.
+ * Strings only, max 500 chars per value.
+ */
+const CustomerMetadataValueSchema = z.string().max(500);
+
+/**
+ * Schema for customer metadata object.
+ * Max 50 keys, string values only (max 500 chars each).
+ * This is only accepted at create time (server-side), NOT at confirm time (browser-callable)
+ * to prevent malicious payers from overwriting merchant-set metadata.
+ */
+const CustomerMetadataSchema = z
+	.record(z.string(), CustomerMetadataValueSchema)
+	.refine((obj) => Object.keys(obj).length <= 50, {
+		message: "Customer metadata cannot have more than 50 keys",
+	})
+	.optional();
+
 export const CreateCheckoutInputSchema = z.object({
 	nodeId: z.string(),
 	amount: z.number().optional(),
@@ -10,6 +29,7 @@ export const CreateCheckoutInputSchema = z.object({
 	successUrl: z.string().optional(),
 	allowDiscountCodes: z.boolean().optional(),
 	metadata: z.record(z.string(), z.any()).optional(),
+	customerMetadata: CustomerMetadataSchema,
 	customerName: z.string().nonempty().optional(),
 	customerEmail: z.string().email().optional(),
 	customerIpAddress: z.string().ip().optional(),
