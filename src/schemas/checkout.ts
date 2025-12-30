@@ -7,6 +7,25 @@ import {
 } from "./invoice";
 import { CheckoutProductSchema } from "./product";
 
+/**
+ * Valid fields that can be required at checkout time.
+ * 'email', 'name', and 'externalId' are standard fields, anything else is a custom field.
+ */
+const CustomerFieldSchema = z.string().min(1);
+
+/**
+ * Customer data in checkout response.
+ * Flat structure - standard fields (name, email, externalId) plus custom string fields.
+ * Uses nullish() to accept both null and undefined from the database.
+ */
+const CustomerOutputSchema = z
+	.object({
+		name: z.string().nullish(),
+		email: z.string().email().nullish(),
+		externalId: z.string().nullish(),
+	})
+	.catchall(z.string());
+
 const BaseCheckoutSchema = z.object({
 	id: z.string(),
 	createdAt: z.date(),
@@ -23,21 +42,19 @@ const BaseCheckoutSchema = z.object({
 	expiresAt: z.date(),
 	userMetadata: z.record(z.any()).nullable(),
 	customFieldData: z.record(z.any()).nullable(),
-	customerMetadata: z.record(z.any()).nullable(),
 	currency: z.string(),
 	allowDiscountCodes: z.boolean(),
-	requireCustomerFields: z
-		.object({
-			customerName: z.boolean().optional(),
-			customerEmail: z.boolean().optional(),
-		})
-		.nullable(),
+	/**
+	 * Array of customer fields required at checkout.
+	 * @example ['email'] - email required
+	 * @example ['email', 'name'] - both required
+	 */
+	requireCustomerData: z.array(CustomerFieldSchema).nullable(),
 	successUrl: z.string().nullable(),
-	customerId: z.string().nullable(),
-	customerExternalId: z.string().nullable(),
-	customerName: z.string().nullable(),
-	customerEmail: z.string().email().nullable(),
-	customerIpAddress: z.string().nullable(),
+	/**
+	 * Customer data associated with this checkout.
+	 */
+	customer: CustomerOutputSchema.nullable(),
 	customerBillingAddress: z.record(z.any()).nullable(),
 	products: z.array(CheckoutProductSchema).nullable(),
 	providedAmount: z.number().nullable(),
@@ -62,7 +79,6 @@ const AmountFieldsSchema = z.object({
 
 export const ExpiredCheckoutSchema = BaseCheckoutSchema.extend({
 	status: z.literal("EXPIRED"),
-	customerId: z.string().nullable(),
 	type: z.enum(["PRODUCTS", "AMOUNT", "TOP_UP"]),
 });
 

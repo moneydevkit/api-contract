@@ -2,6 +2,48 @@ import { oc } from "@orpc/contract";
 import { z } from "zod";
 import { CheckoutSchema } from "../schemas/checkout";
 
+/**
+ * Helper to treat empty strings as undefined (not provided).
+ * This allows clients to pass empty strings without validation errors.
+ */
+const emptyStringToUndefined = z
+	.string()
+	.transform((val) => (val.trim() === "" ? undefined : val));
+
+/**
+ * Email field that accepts empty strings (treated as undefined) or valid emails.
+ */
+const emailOrEmpty = z.string().email().optional().or(z.literal(""));
+
+/**
+ * Valid fields that can be required at checkout time.
+ * - Standard fields: 'email', 'name' (checked against customer.email/name)
+ * - Any other string is a custom field (checked against customer[field])
+ *
+ * @example ['email'] - require email
+ * @example ['email', 'name'] - require both email and name
+ * @example ['email', 'company'] - require email and company
+ */
+export const CustomerFieldSchema = z.string().min(1);
+export type CustomerField = string;
+
+/**
+ * Customer data object for checkout.
+ * Flat structure - standard fields (name, email, externalId) plus any custom string fields.
+ * Empty strings are treated as undefined (not provided).
+ *
+ * @example { name: "John", email: "john@example.com", externalId: "user_123", company: "Acme" }
+ */
+export const CustomerInputSchema = z
+	.object({
+		name: emptyStringToUndefined.optional(),
+		email: emailOrEmpty,
+		externalId: emptyStringToUndefined.optional(),
+	})
+	.catchall(z.string());
+
+export type CustomerInput = z.infer<typeof CustomerInputSchema>;
+
 export const CreateCheckoutInputSchema = z.object({
 	nodeId: z.string(),
 	amount: z.number().optional(),
@@ -10,24 +52,25 @@ export const CreateCheckoutInputSchema = z.object({
 	successUrl: z.string().optional(),
 	allowDiscountCodes: z.boolean().optional(),
 	metadata: z.record(z.string(), z.any()).optional(),
-	customerName: z.string().nonempty().optional(),
-	customerEmail: z.string().email().optional(),
-	customerIpAddress: z.string().ip().optional(),
-	customerExternalId: z.string().nonempty().optional(),
-	requireCustomerFields: z
-		.object({
-			customerName: z.boolean().optional(),
-			customerEmail: z.boolean().optional(),
-		})
-		.optional(),
+	/**
+	 * Customer data for this checkout.
+	 */
+	customer: CustomerInputSchema.optional(),
+	/**
+	 * Array of customer fields to require at checkout.
+	 * If a field is listed here and not provided, the checkout UI will prompt for it.
+	 * @example ['email'] - require email
+	 * @example ['email', 'name'] - require both
+	 */
+	requireCustomerData: z.array(CustomerFieldSchema).optional(),
 });
 
 export const ConfirmCheckoutInputSchema = z.object({
 	checkoutId: z.string(),
-	customerName: z.string().nonempty().optional(),
-	customerEmail: z.string().email().optional(),
-	customerIpAddress: z.string().ip().optional(),
-	customerExternalId: z.string().nonempty().optional(),
+	/**
+	 * Customer data provided at confirm time.
+	 */
+	customer: CustomerInputSchema.optional(),
 	products: z
 		.array(
 			z.object({
