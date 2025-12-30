@@ -16,16 +16,11 @@ const baseCheckoutData = {
   expiresAt: new Date('2024-01-01T01:00:00Z'),
   userMetadata: { userId: 'user_123' },
   customFieldData: null,
-  customerMetadata: null,
   currency: 'USD',
   allowDiscountCodes: false,
-  requireCustomerFields: null,
+  requireCustomerData: null,
   successUrl: null,
-  customerId: null,
-  customerExternalId: null,
-  customerName: null,
-  customerEmail: null,
-  customerIpAddress: null,
+  customer: null,
   customerBillingAddress: null,
   products: null,
   providedAmount: null,
@@ -348,26 +343,35 @@ describe('CheckoutSchema', () => {
   });
 
   describe('Field validation', () => {
-    test('should validate email format', () => {
+    test('should validate email format in customer object', () => {
       const checkout = {
         ...baseCheckoutData,
         status: 'UNCONFIRMED' as const,
         type: 'PRODUCTS' as const,
         products: [mockProduct],
-        customerEmail: 'invalid-email',
+        customer: {
+          name: null,
+          email: 'invalid-email',
+          externalId: null,
+        },
       };
 
       const result = CheckoutSchema.safeParse(checkout);
       expect(result.success).toBe(false);
     });
 
-    test('should accept valid email format', () => {
+    test('should accept valid email format in customer object', () => {
       const checkout = {
         ...baseCheckoutData,
         status: 'UNCONFIRMED' as const,
         type: 'PRODUCTS' as const,
         products: [mockProduct],
-        customerEmail: 'test@example.com',
+        customer: {
+          name: 'John Doe',
+          email: 'test@example.com',
+          externalId: null,
+          plan: 'pro',
+        },
       };
 
       const result = CheckoutSchema.safeParse(checkout);

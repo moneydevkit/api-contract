@@ -63,13 +63,35 @@ describe('Checkout Contracts', () => {
         successUrl: 'https://example.com/success',
         allowDiscountCodes: true,
         metadata: { orderId: 'order_123' },
-        customerName: 'John Doe',
-        customerEmail: 'john@example.com',
-        customerIpAddress: '192.168.1.1',
-        customerExternalId: 'customer_ext_123',
-        requireCustomerFields: {
-          customerName: true,
-          customerEmail: false,
+        customer: {
+          name: 'John Doe',
+          email: 'john@example.com',
+          plan: 'pro',
+        },
+        requireCustomerData: ['email', 'name'],
+      };
+
+      const result = CreateCheckoutInputSchema.safeParse(input);
+      expect(result.success).toBe(true);
+    });
+
+    test('should validate requireCustomerData with just email', () => {
+      const input = {
+        nodeId: 'node_123',
+        requireCustomerData: ['email'],
+      };
+
+      const result = CreateCheckoutInputSchema.safeParse(input);
+      expect(result.success).toBe(true);
+    });
+
+    test('should validate requireCustomerData with custom field', () => {
+      const input = {
+        nodeId: 'node_123',
+        requireCustomerData: ['email', 'company'],
+        customer: {
+          email: 'john@example.com',
+          company: 'Acme Inc',
         },
       };
 
@@ -77,61 +99,88 @@ describe('Checkout Contracts', () => {
       expect(result.success).toBe(true);
     });
 
-    test('should reject invalid email format', () => {
-      const input = {
-        customerEmail: 'invalid-email',
-      };
-
-      const result = CreateCheckoutInputSchema.safeParse(input);
-      expect(result.success).toBe(false);
-    });
-
-    test('should reject invalid IP address format', () => {
-      const input = {
-        customerIpAddress: 'not-an-ip',
-      };
-
-      const result = CreateCheckoutInputSchema.safeParse(input);
-      expect(result.success).toBe(false);
-    });
-
-    test('should reject empty string for customerName', () => {
-      const input = {
-        customerName: '',
-      };
-
-      const result = CreateCheckoutInputSchema.safeParse(input);
-      expect(result.success).toBe(false);
-    });
-
-    test('should reject empty string for customerExternalId', () => {
-      const input = {
-        customerExternalId: '',
-      };
-
-      const result = CreateCheckoutInputSchema.safeParse(input);
-      expect(result.success).toBe(false);
-    });
-
-    test('should validate IPv4 address', () => {
+    test('should accept any non-empty string in requireCustomerData (custom fields)', () => {
       const input = {
         nodeId: 'node_123',
-        customerIpAddress: '192.168.1.1',
+        requireCustomerData: ['email', 'company', 'billingAddress'],
       };
 
       const result = CreateCheckoutInputSchema.safeParse(input);
       expect(result.success).toBe(true);
     });
 
-    test('should validate IPv6 address', () => {
+    test('should reject empty string in requireCustomerData', () => {
       const input = {
         nodeId: 'node_123',
-        customerIpAddress: '2001:0db8:85a3:0000:0000:8a2e:0370:7334',
+        requireCustomerData: ['email', ''],
+      };
+
+      const result = CreateCheckoutInputSchema.safeParse(input);
+      expect(result.success).toBe(false);
+    });
+
+    test('should reject invalid email format in customer', () => {
+      const input = {
+        nodeId: 'node_123',
+        customer: {
+          email: 'invalid-email',
+        },
+      };
+
+      const result = CreateCheckoutInputSchema.safeParse(input);
+      expect(result.success).toBe(false);
+    });
+
+    test('should transform empty string for customer name to undefined', () => {
+      const input = {
+        nodeId: 'node_123',
+        customer: {
+          name: '',
+        },
+      };
+
+      const result = CreateCheckoutInputSchema.safeParse(input);
+      expect(result.success).toBe(true);
+      if (result.success) {
+        expect(result.data.customer?.name).toBeUndefined();
+      }
+    });
+
+    test('should validate create checkout with customer custom fields', () => {
+      const input = {
+        nodeId: 'node_123',
+        customer: {
+          userId: 'user_123',
+          plan: 'pro',
+          accountRef: 'acct_456',
+        },
       };
 
       const result = CreateCheckoutInputSchema.safeParse(input);
       expect(result.success).toBe(true);
     });
+
+    test('should only accept string values in custom fields', () => {
+      const validInput = {
+        nodeId: 'node_123',
+        customer: {
+          userId: 'user_123',
+          company: 'Acme Inc',
+        },
+      };
+
+      const invalidInput = {
+        nodeId: 'node_123',
+        customer: {
+          userId: 'user_123',
+          count: 42, // numbers not allowed
+        },
+      };
+
+      expect(CreateCheckoutInputSchema.safeParse(validInput).success).toBe(true);
+      expect(CreateCheckoutInputSchema.safeParse(invalidInput).success).toBe(false);
+    });
+
   });
 
   describe('ConfirmCheckoutInputSchema', () => {
@@ -147,10 +196,10 @@ describe('Checkout Contracts', () => {
     test('should validate confirm checkout input with all fields', () => {
       const input = {
         checkoutId: 'checkout_123',
-        customerName: 'John Doe',
-        customerEmail: 'john@example.com',
-        customerIpAddress: '192.168.1.1',
-        customerExternalId: 'customer_ext_123',
+        customer: {
+          name: 'John Doe',
+          email: 'john@example.com',
+        },
         products: [
           {
             productId: 'product_1',
@@ -168,7 +217,9 @@ describe('Checkout Contracts', () => {
 
     test('should reject confirm checkout without checkoutId', () => {
       const input = {
-        customerName: 'John Doe',
+        customer: {
+          name: 'John Doe',
+        },
       };
 
       const result = ConfirmCheckoutInputSchema.safeParse(input);
@@ -186,6 +237,26 @@ describe('Checkout Contracts', () => {
 
       const result = ConfirmCheckoutInputSchema.safeParse(input);
       expect(result.success).toBe(true);
+    });
+
+    test('should accept custom fields from confirm input (form fields)', () => {
+      // Custom fields are accepted at confirm time - they come from the form
+      const input = {
+        checkoutId: 'checkout_123',
+        customer: {
+          name: 'John Doe',
+          billingAddress: '123 Main St',
+          planId: 'pro',
+        },
+      };
+
+      const result = ConfirmCheckoutInputSchema.safeParse(input);
+      expect(result.success).toBe(true);
+      if (result.success) {
+        expect(result.data.customer).toHaveProperty('name');
+        expect(result.data.customer).toHaveProperty('billingAddress');
+        expect(result.data.customer).toHaveProperty('planId');
+      }
     });
   });
 
