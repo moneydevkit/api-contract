@@ -1,5 +1,6 @@
 import { checkout } from "./contracts/checkout";
 import { onboarding } from "./contracts/onboarding";
+import { products } from "./contracts/products";
 
 export type {
 	ConfirmCheckout,
@@ -18,8 +19,14 @@ export type {
 } from "./contracts/onboarding";
 export type { Checkout } from "./schemas/checkout";
 export { CheckoutSchema } from "./schemas/checkout";
+export type { Product, ProductPrice } from "./contracts/products";
+export {
+	ProductSchema,
+	ProductPriceSchema,
+	ListProductsOutputSchema,
+} from "./contracts/products";
 
-export const contract = { checkout, onboarding };
+export const contract = { checkout, onboarding, products };
 
 export type { MetadataValidationError } from "./validation/metadata-validation";
 export {

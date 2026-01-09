@@ -2,14 +2,8 @@ import { z } from "zod";
 
 export const CheckoutProductPriceSchema = z.object({
 	id: z.string(),
-	amountType: z.enum(["FIXED", "CUSTOM", "FREE", "METERED"]),
+	amountType: z.enum(["FIXED", "CUSTOM", "FREE"]),
 	priceAmount: z.number().nullable(),
-	minimumAmount: z.number().nullable(),
-	maximumAmount: z.number().nullable(),
-	presetAmount: z.number().nullable(),
-	unitAmount: z.number().nullable(),
-	capAmount: z.number().nullable(),
-	meterId: z.string().nullable(),
 });
 
 export const CheckoutProductSchema = z.object({
