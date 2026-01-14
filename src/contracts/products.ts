@@ -1,10 +1,12 @@
 import { oc } from "@orpc/contract";
 import { z } from "zod";
+import { CurrencySchema } from "../schemas/currency";
 
 export const ProductPriceSchema = z.object({
 	id: z.string(),
 	amountType: z.enum(["FIXED", "CUSTOM", "FREE"]),
 	priceAmount: z.number().nullable(),
+	currency: CurrencySchema,
 });
 
 export const ProductSchema = z.object({
@@ -12,7 +14,7 @@ export const ProductSchema = z.object({
 	name: z.string(),
 	description: z.string().nullable(),
 	recurringInterval: z.enum(["MONTH", "QUARTER", "YEAR"]).nullable(),
-	prices: z.array(ProductPriceSchema),
+	price: ProductPriceSchema.nullable(),
 });
 
 export const ListProductsOutputSchema = z.object({

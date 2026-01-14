@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { CurrencySchema } from "./currency";
 import {
 	BaseInvoiceSchema,
 	DynamicAmountPendingInvoiceSchema,
@@ -42,7 +43,7 @@ const BaseCheckoutSchema = z.object({
 	expiresAt: z.date(),
 	userMetadata: z.record(z.any()).nullable(),
 	customFieldData: z.record(z.any()).nullable(),
-	currency: z.string(),
+	currency: CurrencySchema,
 	allowDiscountCodes: z.boolean(),
 	/**
 	 * Array of customer fields required at checkout.

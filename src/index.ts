@@ -19,6 +19,8 @@ export type {
 } from "./contracts/onboarding";
 export type { Checkout } from "./schemas/checkout";
 export { CheckoutSchema } from "./schemas/checkout";
+export type { Currency } from "./schemas/currency";
+export { CurrencySchema } from "./schemas/currency";
 export type { Product, ProductPrice } from "./contracts/products";
 export {
 	ProductSchema,
