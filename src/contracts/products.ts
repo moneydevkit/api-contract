@@ -9,12 +9,15 @@ export const ProductPriceSchema = z.object({
 	currency: CurrencySchema,
 });
 
+// Products have a prices array to allow future support of metered pricing
+// (e.g., base subscription + usage-based charges). Currently only one static price
+// (FIXED/CUSTOM/FREE) is supported.
 export const ProductSchema = z.object({
 	id: z.string(),
 	name: z.string(),
 	description: z.string().nullable(),
 	recurringInterval: z.enum(["MONTH", "QUARTER", "YEAR"]).nullable(),
-	price: ProductPriceSchema.nullable(),
+	prices: z.array(ProductPriceSchema),
 });
 
 export const ListProductsOutputSchema = z.object({
