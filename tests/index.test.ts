@@ -53,12 +53,12 @@ describe('API Contract Index', () => {
           name: 'Test Product',
           description: null,
           recurringInterval: null,
-          price: {
+          prices: [{
             id: 'price_123',
             amountType: 'FIXED' as const,
             priceAmount: 1000,
             currency: 'USD',
-          },
+          }],
         }],
         providedAmount: null,
         totalAmount: null,

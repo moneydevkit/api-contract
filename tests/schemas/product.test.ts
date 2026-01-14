@@ -16,7 +16,7 @@ const baseProductData = {
 	name: "Test Product",
 	description: null,
 	recurringInterval: null,
-	price: baseProductPriceData,
+	prices: [baseProductPriceData],
 };
 
 describe("Product Schemas", () => {
@@ -148,12 +148,14 @@ describe("Product Schemas", () => {
 		test("should validate product with a custom price", () => {
 			const productWithCustomPrice = {
 				...baseProductData,
-				price: {
-					...baseProductPriceData,
-					id: "price_2",
-					amountType: "CUSTOM" as const,
-					priceAmount: null,
-				},
+				prices: [
+					{
+						...baseProductPriceData,
+						id: "price_2",
+						amountType: "CUSTOM" as const,
+						priceAmount: null,
+					},
+				],
 			};
 
 			const result = CheckoutProductSchema.safeParse(productWithCustomPrice);
@@ -180,23 +182,23 @@ describe("Product Schemas", () => {
 			expect(result.success).toBe(false);
 		});
 
-		test("should reject product without price field", () => {
-			const productWithoutPrice = {
+		test("should reject product without prices field", () => {
+			const productWithoutPrices = {
 				...baseProductData,
-				price: undefined,
+				prices: undefined,
 			};
 
-			const result = CheckoutProductSchema.safeParse(productWithoutPrice);
+			const result = CheckoutProductSchema.safeParse(productWithoutPrices);
 			expect(result.success).toBe(false);
 		});
 
-		test("should allow product with null price", () => {
-			const productWithNullPrice = {
+		test("should validate product with empty prices array", () => {
+			const productWithEmptyPrices = {
 				...baseProductData,
-				price: null,
+				prices: [],
 			};
 
-			const result = CheckoutProductSchema.safeParse(productWithNullPrice);
+			const result = CheckoutProductSchema.safeParse(productWithEmptyPrices);
 			expect(result.success).toBe(true);
 		});
 
@@ -210,13 +212,15 @@ describe("Product Schemas", () => {
 			expect(result.success).toBe(false);
 		});
 
-		test("should reject product with invalid price object", () => {
+		test("should reject product with invalid price in prices array", () => {
 			const productWithInvalidPrice = {
 				...baseProductData,
-				price: {
-					...baseProductPriceData,
-					amountType: "INVALID_TYPE" as any,
-				},
+				prices: [
+					{
+						...baseProductPriceData,
+						amountType: "INVALID_TYPE" as any,
+					},
+				],
 			};
 
 			const result = CheckoutProductSchema.safeParse(productWithInvalidPrice);
@@ -250,32 +254,38 @@ describe("Product Schemas", () => {
 				{
 					...baseProductData,
 					id: "product_fixed",
-					price: {
-						...baseProductPriceData,
-						id: "price_fixed",
-						amountType: "FIXED" as const,
-						priceAmount: 2999,
-					},
+					prices: [
+						{
+							...baseProductPriceData,
+							id: "price_fixed",
+							amountType: "FIXED" as const,
+							priceAmount: 2999,
+						},
+					],
 				},
 				{
 					...baseProductData,
 					id: "product_custom",
-					price: {
-						...baseProductPriceData,
-						id: "price_custom",
-						amountType: "CUSTOM" as const,
-						priceAmount: null,
-					},
+					prices: [
+						{
+							...baseProductPriceData,
+							id: "price_custom",
+							amountType: "CUSTOM" as const,
+							priceAmount: null,
+						},
+					],
 				},
 				{
 					...baseProductData,
 					id: "product_free",
-					price: {
-						...baseProductPriceData,
-						id: "price_free",
-						amountType: "FREE" as const,
-						priceAmount: 0,
-					},
+					prices: [
+						{
+							...baseProductPriceData,
+							id: "price_free",
+							amountType: "FREE" as const,
+							priceAmount: 0,
+						},
+					],
 				},
 			];
 
