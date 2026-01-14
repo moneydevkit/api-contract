@@ -4,6 +4,7 @@ export const CheckoutProductPriceSchema = z.object({
 	id: z.string(),
 	amountType: z.enum(["FIXED", "CUSTOM", "FREE"]),
 	priceAmount: z.number().nullable(),
+	currency: z.string(),
 });
 
 export const CheckoutProductSchema = z.object({
@@ -11,5 +12,5 @@ export const CheckoutProductSchema = z.object({
 	name: z.string(),
 	description: z.string().nullable(),
 	recurringInterval: z.enum(["MONTH", "QUARTER", "YEAR"]).nullable(),
-	prices: z.array(CheckoutProductPriceSchema),
+	price: CheckoutProductPriceSchema.nullable(),
 });
