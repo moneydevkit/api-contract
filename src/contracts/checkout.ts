@@ -1,6 +1,7 @@
 import { oc } from "@orpc/contract";
 import { z } from "zod";
 import { CheckoutSchema } from "../schemas/checkout";
+import { CurrencySchema } from "../schemas/currency";
 
 /**
  * Helper to treat empty strings as undefined (not provided).
@@ -47,7 +48,7 @@ export type CustomerInput = z.infer<typeof CustomerInputSchema>;
 export const CreateCheckoutInputSchema = z.object({
 	nodeId: z.string(),
 	amount: z.number().optional(),
-	currency: z.string().optional(),
+	currency: CurrencySchema.optional(),
 	products: z.array(z.string()).optional(),
 	successUrl: z.string().optional(),
 	allowDiscountCodes: z.boolean().optional(),

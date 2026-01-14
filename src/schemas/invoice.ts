@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { CurrencySchema } from "./currency";
 
 export const BaseInvoiceSchema = z.object({
 	invoice: z.string(),
@@ -6,7 +7,7 @@ export const BaseInvoiceSchema = z.object({
 	paymentHash: z.string(),
 	amountSats: z.number().nullable(),
 	amountSatsReceived: z.number().nullable(),
-	currency: z.string(),
+	currency: CurrencySchema,
 	fiatAmount: z.number().nullable(),
 	btcPrice: z.number().nullable(),
 });

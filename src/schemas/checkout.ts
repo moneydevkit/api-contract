@@ -6,6 +6,7 @@ import {
 	PaidInvoiceSchema,
 } from "./invoice";
 import { CheckoutProductSchema } from "./product";
+import { CurrencySchema } from "./currency";
 
 /**
  * Valid fields that can be required at checkout time.
@@ -42,7 +43,7 @@ const BaseCheckoutSchema = z.object({
 	expiresAt: z.date(),
 	userMetadata: z.record(z.any()).nullable(),
 	customFieldData: z.record(z.any()).nullable(),
-	currency: z.string(),
+	currency: CurrencySchema,
 	allowDiscountCodes: z.boolean(),
 	/**
 	 * Array of customer fields required at checkout.

@@ -1,11 +1,12 @@
 import { oc } from "@orpc/contract";
 import { z } from "zod";
+import { CurrencySchema } from "../schemas/currency";
 
 export const ProductPriceSchema = z.object({
 	id: z.string(),
 	amountType: z.enum(["FIXED", "CUSTOM", "FREE"]),
 	priceAmount: z.number().nullable(),
-	currency: z.string(),
+	currency: CurrencySchema,
 });
 
 export const ProductSchema = z.object({
