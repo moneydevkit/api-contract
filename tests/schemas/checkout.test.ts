@@ -39,17 +39,12 @@ const mockProduct = {
   name: 'Test Product',
   description: 'A test product',
   recurringInterval: null,
-  prices: [{
+  price: {
     id: 'price_123',
     amountType: 'FIXED' as const,
     priceAmount: 1000,
-    minimumAmount: null,
-    maximumAmount: null,
-    presetAmount: null,
-    unitAmount: null,
-    capAmount: null,
-    meterId: null,
-  }],
+    currency: 'USD',
+  },
 };
 
 const mockInvoice = {
