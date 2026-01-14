@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { CurrencySchema } from "./currency";
 import {
 	BaseInvoiceSchema,
 	DynamicAmountPendingInvoiceSchema,
@@ -6,7 +7,6 @@ import {
 	PaidInvoiceSchema,
 } from "./invoice";
 import { CheckoutProductSchema } from "./product";
-import { CurrencySchema } from "./currency";
 
 /**
  * Valid fields that can be required at checkout time.
