@@ -58,6 +58,29 @@ const BaseCheckoutSchema = z.object({
 	customer: CustomerOutputSchema.nullable(),
 	customerBillingAddress: z.record(z.any()).nullable(),
 	products: z.array(CheckoutProductSchema).nullable(),
+	/**
+	 * The selected product ID (from the products array).
+	 * For PRODUCTS checkouts, this is the product the customer has chosen.
+	 * null for AMOUNT/TOP_UP checkouts.
+	 */
+	productId: z.string().nullable(),
+	/**
+	 * The selected product price ID.
+	 * References a price from the selected product's prices array.
+	 * null for AMOUNT/TOP_UP checkouts.
+	 */
+	productPriceId: z.string().nullable(),
+	/**
+	 * User-provided amount for CUSTOM price products.
+	 * Only set when the selected price has amountType: CUSTOM.
+	 */
+	customAmount: z.number().nullable(),
+	/**
+	 * The selected product with full details (convenience field).
+	 * Same shape as items in the products array.
+	 * null if no product is selected.
+	 */
+	product: CheckoutProductSchema.nullable(),
 	providedAmount: z.number().nullable(),
 	totalAmount: z.number().nullable(),
 	discountAmount: z.number().nullable(),

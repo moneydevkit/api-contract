@@ -72,6 +72,14 @@ export const ConfirmCheckoutInputSchema = z.object({
 	 * Customer data provided at confirm time.
 	 */
 	customer: CustomerInputSchema.optional(),
+	/**
+	 * Product selection at confirm time.
+	 * - undefined or [] = keep current selection
+	 * - [{ productId }] = change selection to this product
+	 * - priceAmount required if selected price has amountType: CUSTOM
+	 *
+	 * Currently limited to single selection (max 1 item).
+	 */
 	products: z
 		.array(
 			z.object({
@@ -79,6 +87,7 @@ export const ConfirmCheckoutInputSchema = z.object({
 				priceAmount: z.number().optional(),
 			}),
 		)
+		.max(1)
 		.optional(),
 });
 
