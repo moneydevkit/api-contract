@@ -23,7 +23,6 @@
   },
   "scripts": {
     "build": "tsup",
-    "prepare": "npm run build",
     "test": "vitest",
     "check": "biome check ./src --fix"
   },
