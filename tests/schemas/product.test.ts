@@ -43,7 +43,7 @@ describe("Product Schemas", () => {
 			expect(result.success).toBe(true);
 		});
 
-		test("should validate price with FREE amount type", () => {
+		test("should reject FREE amount type (not supported)", () => {
 			const freePrice = {
 				...baseProductPriceData,
 				amountType: "FREE" as const,
@@ -51,10 +51,10 @@ describe("Product Schemas", () => {
 			};
 
 			const result = CheckoutProductPriceSchema.safeParse(freePrice);
-			expect(result.success).toBe(true);
+			expect(result.success).toBe(false);
 		});
 
-		test("should reject METERED amount type", () => {
+		test("should reject METERED amount type (not supported)", () => {
 			const meteredPrice = {
 				...baseProductPriceData,
 				amountType: "METERED" as const,
@@ -272,18 +272,6 @@ describe("Product Schemas", () => {
 							id: "price_custom",
 							amountType: "CUSTOM" as const,
 							priceAmount: null,
-						},
-					],
-				},
-				{
-					...baseProductData,
-					id: "product_free",
-					prices: [
-						{
-							...baseProductPriceData,
-							id: "price_free",
-							amountType: "FREE" as const,
-							priceAmount: 0,
 						},
 					],
 				},

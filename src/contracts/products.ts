@@ -4,14 +4,14 @@ import { CurrencySchema } from "../schemas/currency";
 
 export const ProductPriceSchema = z.object({
 	id: z.string(),
-	amountType: z.enum(["FIXED", "CUSTOM", "FREE"]),
+	amountType: z.enum(["FIXED", "CUSTOM"]),
 	priceAmount: z.number().nullable(),
 	currency: CurrencySchema,
 });
 
 // Products have a prices array to allow future support of metered pricing
 // (e.g., base subscription + usage-based charges). Currently only one static price
-// (FIXED/CUSTOM/FREE) is supported.
+// (FIXED/CUSTOM) is supported.
 export const ProductSchema = z.object({
 	id: z.string(),
 	name: z.string(),

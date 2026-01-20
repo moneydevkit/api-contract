@@ -205,9 +205,6 @@ describe('Checkout Contracts', () => {
             productId: 'product_1',
             priceAmount: 500,
           },
-          {
-            productId: 'product_2',
-          },
         ],
       };
 
@@ -230,13 +227,25 @@ describe('Checkout Contracts', () => {
       const input = {
         checkoutId: 'checkout_123',
         products: [
-          { productId: 'product_1' },
-          { productId: 'product_2', priceAmount: 1000 },
+          { productId: 'product_1', priceAmount: 1000 },
         ],
       };
 
       const result = ConfirmCheckoutInputSchema.safeParse(input);
       expect(result.success).toBe(true);
+    });
+
+    test('should reject products array with more than 1 item', () => {
+      const input = {
+        checkoutId: 'checkout_123',
+        products: [
+          { productId: 'product_1' },
+          { productId: 'product_2' },
+        ],
+      };
+
+      const result = ConfirmCheckoutInputSchema.safeParse(input);
+      expect(result.success).toBe(false);
     });
 
     test('should accept custom fields from confirm input (form fields)', () => {
