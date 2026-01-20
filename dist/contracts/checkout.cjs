@@ -73,7 +73,7 @@ var PaidInvoiceSchema = FixedAmountPendingInvoiceSchema.extend({
 var import_zod3 = require("zod");
 var CheckoutProductPriceSchema = import_zod3.z.object({
   id: import_zod3.z.string(),
-  amountType: import_zod3.z.enum(["FIXED", "CUSTOM", "FREE"]),
+  amountType: import_zod3.z.enum(["FIXED", "CUSTOM"]),
   priceAmount: import_zod3.z.number().nullable(),
   currency: CurrencySchema
 });

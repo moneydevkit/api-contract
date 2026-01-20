@@ -53,19 +53,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -76,7 +76,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -87,7 +87,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -136,19 +136,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -159,7 +159,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -170,7 +170,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "atleastone">;
         }, "strip", zod.ZodTypeAny, {
@@ -186,7 +186,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -197,7 +197,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -238,7 +238,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -262,7 +262,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -273,7 +273,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -314,7 +314,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -358,19 +358,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -381,7 +381,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -392,7 +392,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -405,19 +405,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -428,7 +428,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -439,7 +439,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             totalAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -494,7 +494,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -535,7 +535,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -559,7 +559,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -600,7 +600,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -644,19 +644,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -667,7 +667,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -678,7 +678,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -691,19 +691,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -714,7 +714,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -725,7 +725,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -780,7 +780,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -821,7 +821,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -845,7 +845,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -886,7 +886,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -933,19 +933,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -956,7 +956,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -967,7 +967,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -1016,19 +1016,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -1039,7 +1039,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -1050,7 +1050,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "atleastone">;
         }, "strip", zod.ZodTypeAny, {
@@ -1066,7 +1066,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -1077,7 +1077,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -1118,7 +1118,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -1142,7 +1142,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -1153,7 +1153,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -1194,7 +1194,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -1238,19 +1238,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -1261,7 +1261,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -1272,7 +1272,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -1285,19 +1285,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -1308,7 +1308,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -1319,7 +1319,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             invoiceScid: zod.ZodNullable<zod.ZodString>;
@@ -1374,7 +1374,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -1415,7 +1415,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -1439,7 +1439,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -1480,7 +1480,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -1524,19 +1524,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -1547,7 +1547,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -1558,7 +1558,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -1571,19 +1571,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -1594,7 +1594,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -1605,7 +1605,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -1660,7 +1660,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -1701,7 +1701,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -1725,7 +1725,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -1766,7 +1766,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -1813,19 +1813,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -1836,7 +1836,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -1847,7 +1847,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -1868,19 +1868,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -1891,7 +1891,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -1902,7 +1902,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "atleastone">;
             invoice: zod.ZodObject<{
@@ -1947,7 +1947,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -1958,7 +1958,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -1999,7 +1999,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -2023,7 +2023,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -2034,7 +2034,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -2075,7 +2075,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -2119,19 +2119,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -2142,7 +2142,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -2153,7 +2153,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -2166,19 +2166,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -2189,7 +2189,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -2200,7 +2200,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             invoiceScid: zod.ZodNullable<zod.ZodString>;
@@ -2256,7 +2256,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -2297,7 +2297,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -2321,7 +2321,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -2362,7 +2362,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -2406,19 +2406,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -2429,7 +2429,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -2440,7 +2440,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -2453,19 +2453,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -2476,7 +2476,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -2487,7 +2487,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -2542,7 +2542,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -2583,7 +2583,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -2607,7 +2607,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -2648,7 +2648,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -2695,19 +2695,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -2718,7 +2718,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -2729,7 +2729,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -2750,19 +2750,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -2773,7 +2773,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -2784,7 +2784,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "atleastone">;
             invoice: zod.ZodObject<{
@@ -2829,7 +2829,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -2840,7 +2840,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -2881,7 +2881,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -2905,7 +2905,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -2916,7 +2916,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -2957,7 +2957,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -3001,19 +3001,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -3024,7 +3024,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -3035,7 +3035,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -3048,19 +3048,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -3071,7 +3071,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -3082,7 +3082,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             invoiceScid: zod.ZodNullable<zod.ZodString>;
@@ -3138,7 +3138,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -3179,7 +3179,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -3203,7 +3203,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -3244,7 +3244,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -3288,19 +3288,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -3311,7 +3311,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -3322,7 +3322,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -3335,19 +3335,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -3358,7 +3358,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -3369,7 +3369,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -3425,7 +3425,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -3466,7 +3466,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -3490,7 +3490,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -3531,7 +3531,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -3575,19 +3575,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -3598,7 +3598,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -3609,7 +3609,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -3622,19 +3622,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -3645,7 +3645,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -3656,7 +3656,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -3711,7 +3711,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -3752,7 +3752,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -3776,7 +3776,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -3817,7 +3817,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -3915,19 +3915,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -3938,7 +3938,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -3949,7 +3949,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -3998,19 +3998,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -4021,7 +4021,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -4032,7 +4032,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "atleastone">;
         }, "strip", zod.ZodTypeAny, {
@@ -4048,7 +4048,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -4059,7 +4059,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -4100,7 +4100,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -4124,7 +4124,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -4135,7 +4135,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -4176,7 +4176,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -4220,19 +4220,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -4243,7 +4243,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -4254,7 +4254,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -4267,19 +4267,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -4290,7 +4290,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -4301,7 +4301,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             totalAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -4356,7 +4356,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -4397,7 +4397,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -4421,7 +4421,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -4462,7 +4462,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -4506,19 +4506,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -4529,7 +4529,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -4540,7 +4540,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -4553,19 +4553,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -4576,7 +4576,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -4587,7 +4587,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -4642,7 +4642,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -4683,7 +4683,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -4707,7 +4707,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -4748,7 +4748,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -4795,19 +4795,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -4818,7 +4818,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -4829,7 +4829,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -4878,19 +4878,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -4901,7 +4901,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -4912,7 +4912,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "atleastone">;
         }, "strip", zod.ZodTypeAny, {
@@ -4928,7 +4928,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -4939,7 +4939,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -4980,7 +4980,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -5004,7 +5004,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -5015,7 +5015,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -5056,7 +5056,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -5100,19 +5100,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -5123,7 +5123,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -5134,7 +5134,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -5147,19 +5147,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -5170,7 +5170,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -5181,7 +5181,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             invoiceScid: zod.ZodNullable<zod.ZodString>;
@@ -5236,7 +5236,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -5277,7 +5277,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -5301,7 +5301,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -5342,7 +5342,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -5386,19 +5386,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -5409,7 +5409,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -5420,7 +5420,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -5433,19 +5433,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -5456,7 +5456,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -5467,7 +5467,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -5522,7 +5522,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -5563,7 +5563,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -5587,7 +5587,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -5628,7 +5628,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -5675,19 +5675,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -5698,7 +5698,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -5709,7 +5709,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -5730,19 +5730,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -5753,7 +5753,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -5764,7 +5764,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "atleastone">;
             invoice: zod.ZodObject<{
@@ -5809,7 +5809,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -5820,7 +5820,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -5861,7 +5861,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -5885,7 +5885,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -5896,7 +5896,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -5937,7 +5937,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -5981,19 +5981,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -6004,7 +6004,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -6015,7 +6015,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -6028,19 +6028,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -6051,7 +6051,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -6062,7 +6062,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             invoiceScid: zod.ZodNullable<zod.ZodString>;
@@ -6118,7 +6118,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -6159,7 +6159,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -6183,7 +6183,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -6224,7 +6224,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -6268,19 +6268,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -6291,7 +6291,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -6302,7 +6302,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -6315,19 +6315,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -6338,7 +6338,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -6349,7 +6349,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -6404,7 +6404,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -6445,7 +6445,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -6469,7 +6469,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -6510,7 +6510,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -6557,19 +6557,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -6580,7 +6580,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -6591,7 +6591,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -6612,19 +6612,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -6635,7 +6635,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -6646,7 +6646,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "atleastone">;
             invoice: zod.ZodObject<{
@@ -6691,7 +6691,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -6702,7 +6702,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -6743,7 +6743,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -6767,7 +6767,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -6778,7 +6778,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -6819,7 +6819,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -6863,19 +6863,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -6886,7 +6886,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -6897,7 +6897,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -6910,19 +6910,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -6933,7 +6933,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -6944,7 +6944,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             invoiceScid: zod.ZodNullable<zod.ZodString>;
@@ -7000,7 +7000,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -7041,7 +7041,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -7065,7 +7065,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -7106,7 +7106,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -7150,19 +7150,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -7173,7 +7173,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -7184,7 +7184,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -7197,19 +7197,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -7220,7 +7220,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -7231,7 +7231,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -7287,7 +7287,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -7328,7 +7328,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -7352,7 +7352,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -7393,7 +7393,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -7437,19 +7437,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -7460,7 +7460,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -7471,7 +7471,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -7484,19 +7484,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -7507,7 +7507,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -7518,7 +7518,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -7573,7 +7573,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -7614,7 +7614,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -7638,7 +7638,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -7679,7 +7679,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -7774,19 +7774,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -7797,7 +7797,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -7808,7 +7808,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -7857,19 +7857,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -7880,7 +7880,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -7891,7 +7891,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "atleastone">;
         }, "strip", zod.ZodTypeAny, {
@@ -7907,7 +7907,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -7918,7 +7918,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -7959,7 +7959,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -7983,7 +7983,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -7994,7 +7994,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -8035,7 +8035,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -8079,19 +8079,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -8102,7 +8102,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -8113,7 +8113,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -8126,19 +8126,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -8149,7 +8149,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -8160,7 +8160,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             totalAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -8215,7 +8215,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -8256,7 +8256,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -8280,7 +8280,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -8321,7 +8321,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -8365,19 +8365,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -8388,7 +8388,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -8399,7 +8399,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -8412,19 +8412,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -8435,7 +8435,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -8446,7 +8446,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -8501,7 +8501,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -8542,7 +8542,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -8566,7 +8566,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -8607,7 +8607,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -8654,19 +8654,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -8677,7 +8677,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -8688,7 +8688,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -8737,19 +8737,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -8760,7 +8760,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -8771,7 +8771,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "atleastone">;
         }, "strip", zod.ZodTypeAny, {
@@ -8787,7 +8787,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -8798,7 +8798,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -8839,7 +8839,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -8863,7 +8863,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -8874,7 +8874,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -8915,7 +8915,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -8959,19 +8959,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -8982,7 +8982,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -8993,7 +8993,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -9006,19 +9006,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -9029,7 +9029,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -9040,7 +9040,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             invoiceScid: zod.ZodNullable<zod.ZodString>;
@@ -9095,7 +9095,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -9136,7 +9136,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -9160,7 +9160,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -9201,7 +9201,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -9245,19 +9245,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -9268,7 +9268,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -9279,7 +9279,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -9292,19 +9292,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -9315,7 +9315,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -9326,7 +9326,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -9381,7 +9381,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -9422,7 +9422,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -9446,7 +9446,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -9487,7 +9487,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -9534,19 +9534,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -9557,7 +9557,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -9568,7 +9568,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -9589,19 +9589,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -9612,7 +9612,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -9623,7 +9623,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "atleastone">;
             invoice: zod.ZodObject<{
@@ -9668,7 +9668,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -9679,7 +9679,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -9720,7 +9720,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -9744,7 +9744,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -9755,7 +9755,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -9796,7 +9796,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -9840,19 +9840,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -9863,7 +9863,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -9874,7 +9874,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -9887,19 +9887,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -9910,7 +9910,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -9921,7 +9921,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             invoiceScid: zod.ZodNullable<zod.ZodString>;
@@ -9977,7 +9977,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -10018,7 +10018,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -10042,7 +10042,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -10083,7 +10083,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -10127,19 +10127,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -10150,7 +10150,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -10161,7 +10161,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -10174,19 +10174,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -10197,7 +10197,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -10208,7 +10208,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -10263,7 +10263,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -10304,7 +10304,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -10328,7 +10328,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -10369,7 +10369,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -10416,19 +10416,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -10439,7 +10439,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -10450,7 +10450,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -10471,19 +10471,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -10494,7 +10494,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -10505,7 +10505,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "atleastone">;
             invoice: zod.ZodObject<{
@@ -10550,7 +10550,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -10561,7 +10561,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -10602,7 +10602,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -10626,7 +10626,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -10637,7 +10637,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -10678,7 +10678,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -10722,19 +10722,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -10745,7 +10745,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -10756,7 +10756,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -10769,19 +10769,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -10792,7 +10792,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -10803,7 +10803,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             invoiceScid: zod.ZodNullable<zod.ZodString>;
@@ -10859,7 +10859,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -10900,7 +10900,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -10924,7 +10924,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -10965,7 +10965,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -11009,19 +11009,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -11032,7 +11032,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -11043,7 +11043,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -11056,19 +11056,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -11079,7 +11079,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -11090,7 +11090,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -11146,7 +11146,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -11187,7 +11187,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -11211,7 +11211,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -11252,7 +11252,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -11296,19 +11296,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -11319,7 +11319,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -11330,7 +11330,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -11343,19 +11343,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -11366,7 +11366,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -11377,7 +11377,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -11432,7 +11432,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -11473,7 +11473,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -11497,7 +11497,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -11538,7 +11538,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -11607,19 +11607,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -11630,7 +11630,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -11641,7 +11641,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -11690,19 +11690,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -11713,7 +11713,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -11724,7 +11724,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "atleastone">;
         }, "strip", zod.ZodTypeAny, {
@@ -11740,7 +11740,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -11751,7 +11751,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -11792,7 +11792,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -11816,7 +11816,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -11827,7 +11827,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -11868,7 +11868,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -11912,19 +11912,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -11935,7 +11935,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -11946,7 +11946,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -11959,19 +11959,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -11982,7 +11982,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -11993,7 +11993,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             totalAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -12048,7 +12048,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -12089,7 +12089,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -12113,7 +12113,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -12154,7 +12154,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -12198,19 +12198,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -12221,7 +12221,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -12232,7 +12232,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -12245,19 +12245,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -12268,7 +12268,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -12279,7 +12279,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -12334,7 +12334,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -12375,7 +12375,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -12399,7 +12399,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -12440,7 +12440,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -12487,19 +12487,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -12510,7 +12510,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -12521,7 +12521,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -12570,19 +12570,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -12593,7 +12593,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -12604,7 +12604,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "atleastone">;
         }, "strip", zod.ZodTypeAny, {
@@ -12620,7 +12620,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -12631,7 +12631,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -12672,7 +12672,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -12696,7 +12696,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -12707,7 +12707,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -12748,7 +12748,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -12792,19 +12792,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -12815,7 +12815,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -12826,7 +12826,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -12839,19 +12839,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -12862,7 +12862,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -12873,7 +12873,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             invoiceScid: zod.ZodNullable<zod.ZodString>;
@@ -12928,7 +12928,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -12969,7 +12969,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -12993,7 +12993,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -13034,7 +13034,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -13078,19 +13078,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -13101,7 +13101,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -13112,7 +13112,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -13125,19 +13125,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -13148,7 +13148,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -13159,7 +13159,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -13214,7 +13214,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -13255,7 +13255,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -13279,7 +13279,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -13320,7 +13320,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -13367,19 +13367,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -13390,7 +13390,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -13401,7 +13401,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -13422,19 +13422,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -13445,7 +13445,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -13456,7 +13456,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "atleastone">;
             invoice: zod.ZodObject<{
@@ -13501,7 +13501,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -13512,7 +13512,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -13553,7 +13553,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -13577,7 +13577,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -13588,7 +13588,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -13629,7 +13629,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -13673,19 +13673,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -13696,7 +13696,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -13707,7 +13707,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -13720,19 +13720,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -13743,7 +13743,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -13754,7 +13754,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             invoiceScid: zod.ZodNullable<zod.ZodString>;
@@ -13810,7 +13810,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -13851,7 +13851,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -13875,7 +13875,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -13916,7 +13916,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -13960,19 +13960,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -13983,7 +13983,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -13994,7 +13994,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -14007,19 +14007,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -14030,7 +14030,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -14041,7 +14041,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -14096,7 +14096,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -14137,7 +14137,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -14161,7 +14161,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -14202,7 +14202,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -14249,19 +14249,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -14272,7 +14272,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -14283,7 +14283,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -14304,19 +14304,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -14327,7 +14327,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -14338,7 +14338,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "atleastone">;
             invoice: zod.ZodObject<{
@@ -14383,7 +14383,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -14394,7 +14394,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -14435,7 +14435,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -14459,7 +14459,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, ...{
                 name: string;
@@ -14470,7 +14470,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[]];
             successUrl: string | null;
@@ -14511,7 +14511,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -14555,19 +14555,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -14578,7 +14578,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -14589,7 +14589,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -14602,19 +14602,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -14625,7 +14625,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -14636,7 +14636,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             invoiceScid: zod.ZodNullable<zod.ZodString>;
@@ -14692,7 +14692,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -14733,7 +14733,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -14757,7 +14757,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -14798,7 +14798,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number;
@@ -14842,19 +14842,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -14865,7 +14865,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -14876,7 +14876,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -14889,19 +14889,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -14912,7 +14912,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -14923,7 +14923,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -14979,7 +14979,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -15020,7 +15020,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -15044,7 +15044,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -15085,7 +15085,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -15129,19 +15129,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -15152,7 +15152,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -15163,7 +15163,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">>;
             productId: zod.ZodNullable<zod.ZodString>;
@@ -15176,19 +15176,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -15199,7 +15199,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -15210,7 +15210,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>>;
             providedAmount: zod.ZodNullable<zod.ZodNumber>;
@@ -15265,7 +15265,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -15306,7 +15306,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -15330,7 +15330,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[] | null;
             successUrl: string | null;
@@ -15371,7 +15371,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             } | null;
             providedAmount: number | null;
@@ -15539,19 +15539,19 @@ declare const contract: {
                 recurringInterval: zod.ZodNullable<zod.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
                 prices: zod.ZodArray<zod.ZodObject<{
                     id: zod.ZodString;
-                    amountType: zod.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                    amountType: zod.ZodEnum<["FIXED", "CUSTOM"]>;
                     priceAmount: zod.ZodNullable<zod.ZodNumber>;
                     currency: zod.ZodEnum<["USD", "SAT"]>;
                 }, "strip", zod.ZodTypeAny, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }, {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }>, "many">;
             }, "strip", zod.ZodTypeAny, {
                 name: string;
@@ -15562,7 +15562,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }, {
                 name: string;
@@ -15573,7 +15573,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }>, "many">;
         }, "strip", zod.ZodTypeAny, {
@@ -15586,7 +15586,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[];
         }, {
@@ -15599,7 +15599,7 @@ declare const contract: {
                     currency: "USD" | "SAT";
                     priceAmount: number | null;
                     id: string;
-                    amountType: "FIXED" | "CUSTOM" | "FREE";
+                    amountType: "FIXED" | "CUSTOM";
                 }[];
             }[];
         }>, Record<never, never>, Record<never, never>>;

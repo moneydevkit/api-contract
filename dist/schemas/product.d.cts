@@ -2,19 +2,19 @@ import { z } from 'zod';
 
 declare const CheckoutProductPriceSchema: z.ZodObject<{
     id: z.ZodString;
-    amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+    amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
     priceAmount: z.ZodNullable<z.ZodNumber>;
     currency: z.ZodEnum<["USD", "SAT"]>;
 }, "strip", z.ZodTypeAny, {
     currency: "USD" | "SAT";
     priceAmount: number | null;
     id: string;
-    amountType: "FIXED" | "CUSTOM" | "FREE";
+    amountType: "FIXED" | "CUSTOM";
 }, {
     currency: "USD" | "SAT";
     priceAmount: number | null;
     id: string;
-    amountType: "FIXED" | "CUSTOM" | "FREE";
+    amountType: "FIXED" | "CUSTOM";
 }>;
 declare const CheckoutProductSchema: z.ZodObject<{
     id: z.ZodString;
@@ -23,19 +23,19 @@ declare const CheckoutProductSchema: z.ZodObject<{
     recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
     prices: z.ZodArray<z.ZodObject<{
         id: z.ZodString;
-        amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+        amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
         priceAmount: z.ZodNullable<z.ZodNumber>;
         currency: z.ZodEnum<["USD", "SAT"]>;
     }, "strip", z.ZodTypeAny, {
         currency: "USD" | "SAT";
         priceAmount: number | null;
         id: string;
-        amountType: "FIXED" | "CUSTOM" | "FREE";
+        amountType: "FIXED" | "CUSTOM";
     }, {
         currency: "USD" | "SAT";
         priceAmount: number | null;
         id: string;
-        amountType: "FIXED" | "CUSTOM" | "FREE";
+        amountType: "FIXED" | "CUSTOM";
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
     name: string;
@@ -46,7 +46,7 @@ declare const CheckoutProductSchema: z.ZodObject<{
         currency: "USD" | "SAT";
         priceAmount: number | null;
         id: string;
-        amountType: "FIXED" | "CUSTOM" | "FREE";
+        amountType: "FIXED" | "CUSTOM";
     }[];
 }, {
     name: string;
@@ -57,7 +57,7 @@ declare const CheckoutProductSchema: z.ZodObject<{
         currency: "USD" | "SAT";
         priceAmount: number | null;
         id: string;
-        amountType: "FIXED" | "CUSTOM" | "FREE";
+        amountType: "FIXED" | "CUSTOM";
     }[];
 }>;
 

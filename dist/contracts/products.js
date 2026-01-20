@@ -4,7 +4,7 @@ import {
   ProductSchema,
   listProductsContract,
   products
-} from "../chunk-Y6DXID65.js";
+} from "../chunk-YRMIQCBR.js";
 import "../chunk-6M6LFZ3U.js";
 export {
   ListProductsOutputSchema,

@@ -3,19 +3,19 @@ import { z } from 'zod';
 
 declare const ProductPriceSchema: z.ZodObject<{
     id: z.ZodString;
-    amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+    amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
     priceAmount: z.ZodNullable<z.ZodNumber>;
     currency: z.ZodEnum<["USD", "SAT"]>;
 }, "strip", z.ZodTypeAny, {
     currency: "USD" | "SAT";
     priceAmount: number | null;
     id: string;
-    amountType: "FIXED" | "CUSTOM" | "FREE";
+    amountType: "FIXED" | "CUSTOM";
 }, {
     currency: "USD" | "SAT";
     priceAmount: number | null;
     id: string;
-    amountType: "FIXED" | "CUSTOM" | "FREE";
+    amountType: "FIXED" | "CUSTOM";
 }>;
 declare const ProductSchema: z.ZodObject<{
     id: z.ZodString;
@@ -24,19 +24,19 @@ declare const ProductSchema: z.ZodObject<{
     recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
     prices: z.ZodArray<z.ZodObject<{
         id: z.ZodString;
-        amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+        amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
         priceAmount: z.ZodNullable<z.ZodNumber>;
         currency: z.ZodEnum<["USD", "SAT"]>;
     }, "strip", z.ZodTypeAny, {
         currency: "USD" | "SAT";
         priceAmount: number | null;
         id: string;
-        amountType: "FIXED" | "CUSTOM" | "FREE";
+        amountType: "FIXED" | "CUSTOM";
     }, {
         currency: "USD" | "SAT";
         priceAmount: number | null;
         id: string;
-        amountType: "FIXED" | "CUSTOM" | "FREE";
+        amountType: "FIXED" | "CUSTOM";
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
     name: string;
@@ -47,7 +47,7 @@ declare const ProductSchema: z.ZodObject<{
         currency: "USD" | "SAT";
         priceAmount: number | null;
         id: string;
-        amountType: "FIXED" | "CUSTOM" | "FREE";
+        amountType: "FIXED" | "CUSTOM";
     }[];
 }, {
     name: string;
@@ -58,7 +58,7 @@ declare const ProductSchema: z.ZodObject<{
         currency: "USD" | "SAT";
         priceAmount: number | null;
         id: string;
-        amountType: "FIXED" | "CUSTOM" | "FREE";
+        amountType: "FIXED" | "CUSTOM";
     }[];
 }>;
 declare const ListProductsOutputSchema: z.ZodObject<{
@@ -69,19 +69,19 @@ declare const ListProductsOutputSchema: z.ZodObject<{
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -92,7 +92,7 @@ declare const ListProductsOutputSchema: z.ZodObject<{
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -103,7 +103,7 @@ declare const ListProductsOutputSchema: z.ZodObject<{
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
@@ -116,7 +116,7 @@ declare const ListProductsOutputSchema: z.ZodObject<{
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[];
 }, {
@@ -129,7 +129,7 @@ declare const ListProductsOutputSchema: z.ZodObject<{
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[];
 }>;
@@ -143,19 +143,19 @@ declare const listProductsContract: _orpc_contract.ContractProcedureBuilderWithI
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -166,7 +166,7 @@ declare const listProductsContract: _orpc_contract.ContractProcedureBuilderWithI
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -177,7 +177,7 @@ declare const listProductsContract: _orpc_contract.ContractProcedureBuilderWithI
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
@@ -190,7 +190,7 @@ declare const listProductsContract: _orpc_contract.ContractProcedureBuilderWithI
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[];
 }, {
@@ -203,7 +203,7 @@ declare const listProductsContract: _orpc_contract.ContractProcedureBuilderWithI
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[];
 }>, Record<never, never>, Record<never, never>>;
@@ -216,19 +216,19 @@ declare const products: {
             recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
             prices: z.ZodArray<z.ZodObject<{
                 id: z.ZodString;
-                amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+                amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
                 priceAmount: z.ZodNullable<z.ZodNumber>;
                 currency: z.ZodEnum<["USD", "SAT"]>;
             }, "strip", z.ZodTypeAny, {
                 currency: "USD" | "SAT";
                 priceAmount: number | null;
                 id: string;
-                amountType: "FIXED" | "CUSTOM" | "FREE";
+                amountType: "FIXED" | "CUSTOM";
             }, {
                 currency: "USD" | "SAT";
                 priceAmount: number | null;
                 id: string;
-                amountType: "FIXED" | "CUSTOM" | "FREE";
+                amountType: "FIXED" | "CUSTOM";
             }>, "many">;
         }, "strip", z.ZodTypeAny, {
             name: string;
@@ -239,7 +239,7 @@ declare const products: {
                 currency: "USD" | "SAT";
                 priceAmount: number | null;
                 id: string;
-                amountType: "FIXED" | "CUSTOM" | "FREE";
+                amountType: "FIXED" | "CUSTOM";
             }[];
         }, {
             name: string;
@@ -250,7 +250,7 @@ declare const products: {
                 currency: "USD" | "SAT";
                 priceAmount: number | null;
                 id: string;
-                amountType: "FIXED" | "CUSTOM" | "FREE";
+                amountType: "FIXED" | "CUSTOM";
             }[];
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
@@ -263,7 +263,7 @@ declare const products: {
                 currency: "USD" | "SAT";
                 priceAmount: number | null;
                 id: string;
-                amountType: "FIXED" | "CUSTOM" | "FREE";
+                amountType: "FIXED" | "CUSTOM";
             }[];
         }[];
     }, {
@@ -276,7 +276,7 @@ declare const products: {
                 currency: "USD" | "SAT";
                 priceAmount: number | null;
                 id: string;
-                amountType: "FIXED" | "CUSTOM" | "FREE";
+                amountType: "FIXED" | "CUSTOM";
             }[];
         }[];
     }>, Record<never, never>, Record<never, never>>;

@@ -70,7 +70,7 @@ var PaidInvoiceSchema = FixedAmountPendingInvoiceSchema.extend({
 var import_zod3 = require("zod");
 var CheckoutProductPriceSchema = import_zod3.z.object({
   id: import_zod3.z.string(),
-  amountType: import_zod3.z.enum(["FIXED", "CUSTOM", "FREE"]),
+  amountType: import_zod3.z.enum(["FIXED", "CUSTOM"]),
   priceAmount: import_zod3.z.number().nullable(),
   currency: CurrencySchema
 });
@@ -397,7 +397,7 @@ var import_contract3 = require("@orpc/contract");
 var import_zod7 = require("zod");
 var ProductPriceSchema = import_zod7.z.object({
   id: import_zod7.z.string(),
-  amountType: import_zod7.z.enum(["FIXED", "CUSTOM", "FREE"]),
+  amountType: import_zod7.z.enum(["FIXED", "CUSTOM"]),
   priceAmount: import_zod7.z.number().nullable(),
   currency: CurrencySchema
 });

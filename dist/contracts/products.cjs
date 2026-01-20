@@ -37,7 +37,7 @@ var CurrencySchema = import_zod.z.enum(["USD", "SAT"]);
 // src/contracts/products.ts
 var ProductPriceSchema = import_zod2.z.object({
   id: import_zod2.z.string(),
-  amountType: import_zod2.z.enum(["FIXED", "CUSTOM", "FREE"]),
+  amountType: import_zod2.z.enum(["FIXED", "CUSTOM"]),
   priceAmount: import_zod2.z.number().nullable(),
   currency: CurrencySchema
 });

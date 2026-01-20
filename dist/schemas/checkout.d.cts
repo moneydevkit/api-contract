@@ -33,19 +33,19 @@ declare const ExpiredCheckoutSchema: z.ZodObject<{
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -56,7 +56,7 @@ declare const ExpiredCheckoutSchema: z.ZodObject<{
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -67,7 +67,7 @@ declare const ExpiredCheckoutSchema: z.ZodObject<{
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "many">>;
     productId: z.ZodNullable<z.ZodString>;
@@ -80,19 +80,19 @@ declare const ExpiredCheckoutSchema: z.ZodObject<{
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -103,7 +103,7 @@ declare const ExpiredCheckoutSchema: z.ZodObject<{
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -114,7 +114,7 @@ declare const ExpiredCheckoutSchema: z.ZodObject<{
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     providedAmount: z.ZodNullable<z.ZodNumber>;
@@ -169,7 +169,7 @@ declare const ExpiredCheckoutSchema: z.ZodObject<{
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -210,7 +210,7 @@ declare const ExpiredCheckoutSchema: z.ZodObject<{
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -234,7 +234,7 @@ declare const ExpiredCheckoutSchema: z.ZodObject<{
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -275,7 +275,7 @@ declare const ExpiredCheckoutSchema: z.ZodObject<{
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -323,19 +323,19 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -346,7 +346,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -357,7 +357,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     providedAmount: z.ZodNullable<z.ZodNumber>;
@@ -406,19 +406,19 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -429,7 +429,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -440,7 +440,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "atleastone">;
 }, "strip", z.ZodTypeAny, {
@@ -456,7 +456,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, ...{
         name: string;
@@ -467,7 +467,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[]];
     successUrl: string | null;
@@ -508,7 +508,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -532,7 +532,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, ...{
         name: string;
@@ -543,7 +543,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[]];
     successUrl: string | null;
@@ -584,7 +584,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -628,19 +628,19 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -651,7 +651,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -662,7 +662,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "many">>;
     productId: z.ZodNullable<z.ZodString>;
@@ -675,19 +675,19 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -698,7 +698,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -709,7 +709,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     totalAmount: z.ZodNullable<z.ZodNumber>;
@@ -764,7 +764,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -805,7 +805,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number;
@@ -829,7 +829,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -870,7 +870,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number;
@@ -914,19 +914,19 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -937,7 +937,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -948,7 +948,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "many">>;
     productId: z.ZodNullable<z.ZodString>;
@@ -961,19 +961,19 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -984,7 +984,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -995,7 +995,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     providedAmount: z.ZodNullable<z.ZodNumber>;
@@ -1050,7 +1050,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -1091,7 +1091,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -1115,7 +1115,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -1156,7 +1156,7 @@ declare const UnconfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodO
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -1204,19 +1204,19 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -1227,7 +1227,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -1238,7 +1238,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     providedAmount: z.ZodNullable<z.ZodNumber>;
@@ -1287,19 +1287,19 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -1310,7 +1310,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -1321,7 +1321,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "atleastone">;
 }, "strip", z.ZodTypeAny, {
@@ -1337,7 +1337,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, ...{
         name: string;
@@ -1348,7 +1348,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[]];
     successUrl: string | null;
@@ -1389,7 +1389,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -1413,7 +1413,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, ...{
         name: string;
@@ -1424,7 +1424,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[]];
     successUrl: string | null;
@@ -1465,7 +1465,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -1509,19 +1509,19 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -1532,7 +1532,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -1543,7 +1543,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "many">>;
     productId: z.ZodNullable<z.ZodString>;
@@ -1556,19 +1556,19 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -1579,7 +1579,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -1590,7 +1590,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     invoiceScid: z.ZodNullable<z.ZodString>;
@@ -1645,7 +1645,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -1686,7 +1686,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number;
@@ -1710,7 +1710,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -1751,7 +1751,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number;
@@ -1795,19 +1795,19 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -1818,7 +1818,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -1829,7 +1829,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "many">>;
     productId: z.ZodNullable<z.ZodString>;
@@ -1842,19 +1842,19 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -1865,7 +1865,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -1876,7 +1876,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     providedAmount: z.ZodNullable<z.ZodNumber>;
@@ -1931,7 +1931,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -1972,7 +1972,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -1996,7 +1996,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -2037,7 +2037,7 @@ declare const ConfirmedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.ZodObj
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -2085,19 +2085,19 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -2108,7 +2108,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -2119,7 +2119,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     providedAmount: z.ZodNullable<z.ZodNumber>;
@@ -2140,19 +2140,19 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -2163,7 +2163,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -2174,7 +2174,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "atleastone">;
     invoice: z.ZodObject<{
@@ -2219,7 +2219,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, ...{
         name: string;
@@ -2230,7 +2230,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[]];
     successUrl: string | null;
@@ -2271,7 +2271,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -2295,7 +2295,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, ...{
         name: string;
@@ -2306,7 +2306,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[]];
     successUrl: string | null;
@@ -2347,7 +2347,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -2391,19 +2391,19 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -2414,7 +2414,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -2425,7 +2425,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "many">>;
     productId: z.ZodNullable<z.ZodString>;
@@ -2438,19 +2438,19 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -2461,7 +2461,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -2472,7 +2472,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     invoiceScid: z.ZodNullable<z.ZodString>;
@@ -2528,7 +2528,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -2569,7 +2569,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number;
@@ -2593,7 +2593,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -2634,7 +2634,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number;
@@ -2678,19 +2678,19 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -2701,7 +2701,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -2712,7 +2712,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "many">>;
     productId: z.ZodNullable<z.ZodString>;
@@ -2725,19 +2725,19 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -2748,7 +2748,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -2759,7 +2759,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     providedAmount: z.ZodNullable<z.ZodNumber>;
@@ -2814,7 +2814,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -2855,7 +2855,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -2879,7 +2879,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -2920,7 +2920,7 @@ declare const PendingPaymentCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.Z
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -2968,19 +2968,19 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -2991,7 +2991,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -3002,7 +3002,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     providedAmount: z.ZodNullable<z.ZodNumber>;
@@ -3023,19 +3023,19 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -3046,7 +3046,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -3057,7 +3057,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "atleastone">;
     invoice: z.ZodObject<{
@@ -3102,7 +3102,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, ...{
         name: string;
@@ -3113,7 +3113,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[]];
     successUrl: string | null;
@@ -3154,7 +3154,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -3178,7 +3178,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, ...{
         name: string;
@@ -3189,7 +3189,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[]];
     successUrl: string | null;
@@ -3230,7 +3230,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -3274,19 +3274,19 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -3297,7 +3297,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -3308,7 +3308,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "many">>;
     productId: z.ZodNullable<z.ZodString>;
@@ -3321,19 +3321,19 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -3344,7 +3344,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -3355,7 +3355,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     invoiceScid: z.ZodNullable<z.ZodString>;
@@ -3411,7 +3411,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -3452,7 +3452,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number;
@@ -3476,7 +3476,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -3517,7 +3517,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number;
@@ -3561,19 +3561,19 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -3584,7 +3584,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -3595,7 +3595,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "many">>;
     productId: z.ZodNullable<z.ZodString>;
@@ -3608,19 +3608,19 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -3631,7 +3631,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -3642,7 +3642,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     providedAmount: z.ZodNullable<z.ZodNumber>;
@@ -3698,7 +3698,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -3739,7 +3739,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -3763,7 +3763,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -3804,7 +3804,7 @@ declare const PaymentReceivedCheckoutSchema: z.ZodDiscriminatedUnion<"type", [z.
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -3852,19 +3852,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -3875,7 +3875,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -3886,7 +3886,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     providedAmount: z.ZodNullable<z.ZodNumber>;
@@ -3935,19 +3935,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -3958,7 +3958,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -3969,7 +3969,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "atleastone">;
 }, "strip", z.ZodTypeAny, {
@@ -3985,7 +3985,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, ...{
         name: string;
@@ -3996,7 +3996,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[]];
     successUrl: string | null;
@@ -4037,7 +4037,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -4061,7 +4061,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, ...{
         name: string;
@@ -4072,7 +4072,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[]];
     successUrl: string | null;
@@ -4113,7 +4113,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -4157,19 +4157,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -4180,7 +4180,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -4191,7 +4191,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "many">>;
     productId: z.ZodNullable<z.ZodString>;
@@ -4204,19 +4204,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -4227,7 +4227,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -4238,7 +4238,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     totalAmount: z.ZodNullable<z.ZodNumber>;
@@ -4293,7 +4293,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -4334,7 +4334,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number;
@@ -4358,7 +4358,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -4399,7 +4399,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number;
@@ -4443,19 +4443,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -4466,7 +4466,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -4477,7 +4477,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "many">>;
     productId: z.ZodNullable<z.ZodString>;
@@ -4490,19 +4490,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -4513,7 +4513,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -4524,7 +4524,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     providedAmount: z.ZodNullable<z.ZodNumber>;
@@ -4579,7 +4579,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -4620,7 +4620,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -4644,7 +4644,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -4685,7 +4685,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -4732,19 +4732,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -4755,7 +4755,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -4766,7 +4766,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     providedAmount: z.ZodNullable<z.ZodNumber>;
@@ -4815,19 +4815,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -4838,7 +4838,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -4849,7 +4849,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "atleastone">;
 }, "strip", z.ZodTypeAny, {
@@ -4865,7 +4865,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, ...{
         name: string;
@@ -4876,7 +4876,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[]];
     successUrl: string | null;
@@ -4917,7 +4917,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -4941,7 +4941,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, ...{
         name: string;
@@ -4952,7 +4952,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[]];
     successUrl: string | null;
@@ -4993,7 +4993,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -5037,19 +5037,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -5060,7 +5060,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -5071,7 +5071,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "many">>;
     productId: z.ZodNullable<z.ZodString>;
@@ -5084,19 +5084,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -5107,7 +5107,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -5118,7 +5118,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     invoiceScid: z.ZodNullable<z.ZodString>;
@@ -5173,7 +5173,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -5214,7 +5214,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number;
@@ -5238,7 +5238,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -5279,7 +5279,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number;
@@ -5323,19 +5323,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -5346,7 +5346,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -5357,7 +5357,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "many">>;
     productId: z.ZodNullable<z.ZodString>;
@@ -5370,19 +5370,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -5393,7 +5393,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -5404,7 +5404,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     providedAmount: z.ZodNullable<z.ZodNumber>;
@@ -5459,7 +5459,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -5500,7 +5500,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -5524,7 +5524,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -5565,7 +5565,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -5612,19 +5612,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -5635,7 +5635,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -5646,7 +5646,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     providedAmount: z.ZodNullable<z.ZodNumber>;
@@ -5667,19 +5667,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -5690,7 +5690,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -5701,7 +5701,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "atleastone">;
     invoice: z.ZodObject<{
@@ -5746,7 +5746,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, ...{
         name: string;
@@ -5757,7 +5757,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[]];
     successUrl: string | null;
@@ -5798,7 +5798,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -5822,7 +5822,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, ...{
         name: string;
@@ -5833,7 +5833,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[]];
     successUrl: string | null;
@@ -5874,7 +5874,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -5918,19 +5918,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -5941,7 +5941,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -5952,7 +5952,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "many">>;
     productId: z.ZodNullable<z.ZodString>;
@@ -5965,19 +5965,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -5988,7 +5988,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -5999,7 +5999,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     invoiceScid: z.ZodNullable<z.ZodString>;
@@ -6055,7 +6055,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -6096,7 +6096,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number;
@@ -6120,7 +6120,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -6161,7 +6161,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number;
@@ -6205,19 +6205,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -6228,7 +6228,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -6239,7 +6239,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "many">>;
     productId: z.ZodNullable<z.ZodString>;
@@ -6252,19 +6252,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -6275,7 +6275,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -6286,7 +6286,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     providedAmount: z.ZodNullable<z.ZodNumber>;
@@ -6341,7 +6341,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -6382,7 +6382,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -6406,7 +6406,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -6447,7 +6447,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -6494,19 +6494,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -6517,7 +6517,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -6528,7 +6528,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     providedAmount: z.ZodNullable<z.ZodNumber>;
@@ -6549,19 +6549,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -6572,7 +6572,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -6583,7 +6583,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "atleastone">;
     invoice: z.ZodObject<{
@@ -6628,7 +6628,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, ...{
         name: string;
@@ -6639,7 +6639,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[]];
     successUrl: string | null;
@@ -6680,7 +6680,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -6704,7 +6704,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, ...{
         name: string;
@@ -6715,7 +6715,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[]];
     successUrl: string | null;
@@ -6756,7 +6756,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -6800,19 +6800,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -6823,7 +6823,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -6834,7 +6834,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "many">>;
     productId: z.ZodNullable<z.ZodString>;
@@ -6847,19 +6847,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -6870,7 +6870,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -6881,7 +6881,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     invoiceScid: z.ZodNullable<z.ZodString>;
@@ -6937,7 +6937,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -6978,7 +6978,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number;
@@ -7002,7 +7002,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -7043,7 +7043,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number;
@@ -7087,19 +7087,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -7110,7 +7110,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -7121,7 +7121,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "many">>;
     productId: z.ZodNullable<z.ZodString>;
@@ -7134,19 +7134,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -7157,7 +7157,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -7168,7 +7168,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     providedAmount: z.ZodNullable<z.ZodNumber>;
@@ -7224,7 +7224,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -7265,7 +7265,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -7289,7 +7289,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -7330,7 +7330,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -7374,19 +7374,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -7397,7 +7397,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -7408,7 +7408,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>, "many">>;
     productId: z.ZodNullable<z.ZodString>;
@@ -7421,19 +7421,19 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
         recurringInterval: z.ZodNullable<z.ZodEnum<["MONTH", "QUARTER", "YEAR"]>>;
         prices: z.ZodArray<z.ZodObject<{
             id: z.ZodString;
-            amountType: z.ZodEnum<["FIXED", "CUSTOM", "FREE"]>;
+            amountType: z.ZodEnum<["FIXED", "CUSTOM"]>;
             priceAmount: z.ZodNullable<z.ZodNumber>;
             currency: z.ZodEnum<["USD", "SAT"]>;
         }, "strip", z.ZodTypeAny, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }, {
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         name: string;
@@ -7444,7 +7444,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }, {
         name: string;
@@ -7455,7 +7455,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }>>;
     providedAmount: z.ZodNullable<z.ZodNumber>;
@@ -7510,7 +7510,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -7551,7 +7551,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
@@ -7575,7 +7575,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     }[] | null;
     successUrl: string | null;
@@ -7616,7 +7616,7 @@ declare const CheckoutSchema: z.ZodUnion<[z.ZodDiscriminatedUnion<"type", [z.Zod
             currency: "USD" | "SAT";
             priceAmount: number | null;
             id: string;
-            amountType: "FIXED" | "CUSTOM" | "FREE";
+            amountType: "FIXED" | "CUSTOM";
         }[];
     } | null;
     providedAmount: number | null;
