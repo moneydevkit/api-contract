@@ -1,6 +1,7 @@
 import { checkout } from "./contracts/checkout";
 import { onboarding } from "./contracts/onboarding";
 import { products } from "./contracts/products";
+import { subscription } from "./contracts/subscription";
 
 export type {
 	ConfirmCheckout,
@@ -17,6 +18,11 @@ export type {
 	StartDeviceAuth as StartDeviceAuthInput,
 	StartDeviceAuthResponse,
 } from "./contracts/onboarding";
+export type {
+	CancelSubscriptionInput,
+	CreateRenewalCheckout,
+	GetSubscriptionInput,
+} from "./contracts/subscription";
 export type { Checkout } from "./schemas/checkout";
 export { CheckoutSchema } from "./schemas/checkout";
 export type { Currency } from "./schemas/currency";
@@ -27,8 +33,22 @@ export {
 	ProductPriceSchema,
 	ListProductsOutputSchema,
 } from "./contracts/products";
+export type {
+	RecurringInterval,
+	Subscription,
+	SubscriptionStatus,
+	SubscriptionWebhookEvent,
+	SubscriptionWebhookPayload,
+} from "./schemas/subscription";
+export {
+	RecurringIntervalSchema,
+	SubscriptionSchema,
+	SubscriptionStatusSchema,
+	SubscriptionWebhookEventSchema,
+	SubscriptionWebhookPayloadSchema,
+} from "./schemas/subscription";
 
-export const contract = { checkout, onboarding, products };
+export const contract = { checkout, onboarding, products, subscription };
 
 export type { MetadataValidationError } from "./validation/metadata-validation";
 export {
