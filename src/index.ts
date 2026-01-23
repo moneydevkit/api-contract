@@ -1,6 +1,12 @@
 import { checkout } from "./contracts/checkout";
 import { onboarding } from "./contracts/onboarding";
 import { products } from "./contracts/products";
+import {
+	customers as mcpCustomers,
+	products as mcpProducts,
+	orders as mcpOrders,
+	checkouts as mcpCheckouts,
+} from "./contracts/mcp";
 
 export type {
 	ConfirmCheckout,
@@ -28,7 +34,30 @@ export {
 	ListProductsOutputSchema,
 } from "./contracts/products";
 
+// New MCP schemas
+export type { Customer } from "./schemas/customer";
+export { CustomerSchema } from "./schemas/customer";
+export type { Order, OrderItem } from "./schemas/order";
+export { OrderSchema, OrderItemSchema } from "./schemas/order";
+export type { PaginationInput, PaginationOutput } from "./schemas/pagination";
+export { PaginationInputSchema, PaginationOutputSchema } from "./schemas/pagination";
+export type { ProductPriceInput } from "./schemas/product-price-input";
+export { ProductPriceInputSchema } from "./schemas/product-price-input";
+
+// SDK contract - consumed by SDK clients
 export const contract = { checkout, onboarding, products };
+
+/**
+ * MCP contract - separate namespace for MCP tools.
+ * NOT consumed by SDK, only by MCP server via /rpc/mcp endpoint.
+ * Uses OAuth authentication (not API key auth).
+ */
+export const mcpContract = {
+	customers: mcpCustomers,
+	products: mcpProducts,
+	orders: mcpOrders,
+	checkouts: mcpCheckouts,
+};
 
 export type { MetadataValidationError } from "./validation/metadata-validation";
 export {
