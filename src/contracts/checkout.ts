@@ -2,6 +2,10 @@ import { oc } from "@orpc/contract";
 import { z } from "zod";
 import { CheckoutSchema } from "../schemas/checkout";
 import { CurrencySchema } from "../schemas/currency";
+import {
+	PaginationInputSchema,
+	PaginationOutputSchema,
+} from "../schemas/pagination";
 
 /**
  * Helper to treat empty strings as undefined (not provided).
@@ -142,10 +146,32 @@ export const paymentReceivedContract = oc
 	.input(PaymentReceivedInputSchema)
 	.output(z.object({ ok: z.boolean() }));
 
+// List checkouts schemas
+const CheckoutStatusSchema = z.enum([
+	"UNCONFIRMED",
+	"CONFIRMED",
+	"PENDING_PAYMENT",
+	"PAYMENT_RECEIVED",
+	"EXPIRED",
+]);
+
+const ListCheckoutsInputSchema = PaginationInputSchema.extend({
+	status: CheckoutStatusSchema.optional(),
+});
+
+const ListCheckoutsOutputSchema = PaginationOutputSchema.extend({
+	checkouts: z.array(CheckoutSchema),
+});
+
+export const listCheckoutsContract = oc
+	.input(ListCheckoutsInputSchema)
+	.output(ListCheckoutsOutputSchema);
+
 export const checkout = {
 	get: getCheckoutContract,
 	create: createCheckoutContract,
 	confirm: confirmCheckoutContract,
 	registerInvoice: registerInvoiceContract,
 	paymentReceived: paymentReceivedContract,
+	list: listCheckoutsContract,
 };
