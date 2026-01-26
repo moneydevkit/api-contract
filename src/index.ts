@@ -37,8 +37,8 @@ export {
 // New MCP schemas
 export type { Customer } from "./schemas/customer";
 export { CustomerSchema } from "./schemas/customer";
-export type { Order, OrderItem } from "./schemas/order";
-export { OrderSchema, OrderItemSchema } from "./schemas/order";
+export type { Order, OrderItem, OrderStatus } from "./schemas/order";
+export { OrderSchema, OrderItemSchema, OrderStatusSchema } from "./schemas/order";
 export type { PaginationInput, PaginationOutput } from "./schemas/pagination";
 export {
 	PaginationInputSchema,

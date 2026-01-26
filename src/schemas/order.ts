@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { CurrencySchema } from "./currency";
 
 /**
  * Order status enum matching Prisma OrderStatus.
@@ -38,8 +39,8 @@ export const OrderSchema = z.object({
 	id: z.string(),
 	organizationId: z.string(),
 	customerId: z.string().nullable(),
-	status: z.string(), // Prisma uses String, not enum
-	currency: z.string(),
+	status: OrderStatusSchema,
+	currency: CurrencySchema,
 	subtotalAmount: z.number(),
 	taxAmount: z.number(),
 	userMetadata: z.record(z.string(), z.any()).nullable(),
