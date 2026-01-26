@@ -1,4 +1,5 @@
 import { checkout } from "./contracts/checkout";
+import { customer } from "./contracts/customer";
 import {
 	checkouts as mcpCheckouts,
 	customers as mcpCustomers,
@@ -58,7 +59,7 @@ export {
 } from "./schemas/product-price-input";
 
 // SDK contract - consumed by SDK clients
-export const contract = { checkout, onboarding, products };
+export const contract = { checkout, customer, onboarding, products };
 
 /**
  * MCP contract - separate namespace for MCP tools.
