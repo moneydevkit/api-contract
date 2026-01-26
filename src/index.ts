@@ -1,11 +1,5 @@
 import { checkout } from "./contracts/checkout";
 import { customer } from "./contracts/customer";
-import {
-	checkouts as mcpCheckouts,
-	customers as mcpCustomers,
-	orders as mcpOrders,
-	products as mcpProducts,
-} from "./contracts/mcp";
 import { onboarding } from "./contracts/onboarding";
 import { order } from "./contracts/order";
 import { products } from "./contracts/products";
@@ -59,20 +53,8 @@ export {
 	RecurringIntervalInputSchema,
 } from "./schemas/product-price-input";
 
-// SDK contract - consumed by SDK clients
+// Unified contract - consumed by both SDK and MCP
 export const contract = { checkout, customer, onboarding, order, products };
-
-/**
- * MCP contract - separate namespace for MCP tools.
- * NOT consumed by SDK, only by MCP server via /rpc/mcp endpoint.
- * Uses OAuth authentication (not API key auth).
- */
-export const mcpContract = {
-	customers: mcpCustomers,
-	products: mcpProducts,
-	orders: mcpOrders,
-	checkouts: mcpCheckouts,
-};
 
 export type { MetadataValidationError } from "./validation/metadata-validation";
 export {
