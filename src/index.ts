@@ -53,8 +53,34 @@ export {
 	RecurringIntervalInputSchema,
 } from "./schemas/product-price-input";
 
-// Unified contract - consumed by both SDK and MCP
+// Unified contract - contains all methods from both SDK and MCP
 export const contract = { checkout, customer, onboarding, order, products };
+
+// SDK contract - only the methods the SDK router implements
+export const sdkContract = {
+	checkout: {
+		get: checkout.get,
+		create: checkout.create,
+		confirm: checkout.confirm,
+		registerInvoice: checkout.registerInvoice,
+		paymentReceived: checkout.paymentReceived,
+	},
+	onboarding,
+	products: {
+		list: products.list,
+	},
+};
+
+// MCP contract - only the methods the MCP router implements
+export const mcpContract = {
+	customer,
+	order,
+	checkout: {
+		list: checkout.listSummary,
+		get: checkout.getSummary,
+	},
+	products,
+};
 
 export type { MetadataValidationError } from "./validation/metadata-validation";
 export {

@@ -167,6 +167,58 @@ export const listCheckoutsContract = oc
 	.input(ListCheckoutsInputSchema)
 	.output(ListCheckoutsOutputSchema);
 
+// MCP-specific embedded customer schema
+const CheckoutCustomerSchema = z
+	.object({
+		id: z.string(),
+		name: z.string().nullable(),
+		email: z.string().nullable(),
+		emailVerified: z.boolean(),
+		externalId: z.string().nullable(),
+		userMetadata: z.record(z.unknown()).nullable(),
+		organizationId: z.string(),
+		createdAt: z.date(),
+		modifiedAt: z.date().nullable(),
+	})
+	.nullable();
+
+// MCP-specific summary schema for list (simpler than full CheckoutSchema)
+const CheckoutListItemSchema = z.object({
+	id: z.string(),
+	status: CheckoutStatusSchema,
+	type: z.enum(["PRODUCTS", "AMOUNT", "TOP_UP"]),
+	currency: CurrencySchema,
+	totalAmount: z.number().nullable(),
+	customerId: z.string().nullable(),
+	customer: CheckoutCustomerSchema,
+	productId: z.string().nullable(),
+	organizationId: z.string(),
+	expiresAt: z.date(),
+	createdAt: z.date(),
+	modifiedAt: z.date().nullable(),
+});
+
+// MCP-specific detailed schema for get (includes additional fields)
+const CheckoutDetailSchema = CheckoutListItemSchema.extend({
+	userMetadata: z.record(z.unknown()).nullable(),
+	successUrl: z.string().nullable(),
+	discountAmount: z.number().nullable(),
+	netAmount: z.number().nullable(),
+	taxAmount: z.number().nullable(),
+});
+
+const ListCheckoutsSummaryOutputSchema = PaginationOutputSchema.extend({
+	checkouts: z.array(CheckoutListItemSchema),
+});
+
+export const listCheckoutsSummaryContract = oc
+	.input(ListCheckoutsInputSchema)
+	.output(ListCheckoutsSummaryOutputSchema);
+
+export const getCheckoutSummaryContract = oc
+	.input(GetCheckoutInputSchema)
+	.output(CheckoutDetailSchema);
+
 export const checkout = {
 	get: getCheckoutContract,
 	create: createCheckoutContract,
@@ -174,4 +226,6 @@ export const checkout = {
 	registerInvoice: registerInvoiceContract,
 	paymentReceived: paymentReceivedContract,
 	list: listCheckoutsContract,
+	listSummary: listCheckoutsSummaryContract,
+	getSummary: getCheckoutSummaryContract,
 };
