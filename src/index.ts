@@ -48,8 +48,14 @@ export {
 	PaginationInputSchema,
 	PaginationOutputSchema,
 } from "./schemas/pagination";
-export type { ProductPriceInput } from "./schemas/product-price-input";
-export { ProductPriceInputSchema } from "./schemas/product-price-input";
+export type {
+	ProductPriceInput,
+	RecurringIntervalInput,
+} from "./schemas/product-price-input";
+export {
+	ProductPriceInputSchema,
+	RecurringIntervalInputSchema,
+} from "./schemas/product-price-input";
 
 // SDK contract - consumed by SDK clients
 export const contract = { checkout, onboarding, products };

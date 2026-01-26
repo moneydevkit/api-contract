@@ -13,15 +13,19 @@ import { CurrencySchema } from "./currency";
 export const PriceAmountTypeSchema = z.enum(["FIXED", "CUSTOM"]);
 export type PriceAmountType = z.infer<typeof PriceAmountTypeSchema>;
 
-// Recurring interval with "never" option for one-time purchases
-export const RecurringIntervalWithNeverSchema = z.enum([
+/**
+ * Recurring interval schema for product INPUT (MCP create/update).
+ * Uses "NEVER" explicitly for one-time purchases.
+ * Server normalizes "NEVER" → null when storing/returning.
+ */
+export const RecurringIntervalInputSchema = z.enum([
 	"NEVER",
 	"MONTH",
 	"QUARTER",
 	"YEAR",
 ]);
-export type RecurringIntervalWithNever = z.infer<
-	typeof RecurringIntervalWithNeverSchema
+export type RecurringIntervalInput = z.infer<
+	typeof RecurringIntervalInputSchema
 >;
 
 /**
@@ -32,7 +36,7 @@ export type RecurringIntervalWithNever = z.infer<
  */
 export const ProductPriceInputSchema = z
 	.object({
-		recurringInterval: RecurringIntervalWithNeverSchema,
+		recurringInterval: RecurringIntervalInputSchema,
 		currency: CurrencySchema,
 		amountType: PriceAmountTypeSchema,
 		// Required for FIXED, ignored for CUSTOM
