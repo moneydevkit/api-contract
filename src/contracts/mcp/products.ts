@@ -1,11 +1,11 @@
 import { oc } from "@orpc/contract";
 import { z } from "zod";
-import { ProductSchema, ProductPriceSchema } from "../products";
 import {
 	PaginationInputSchema,
 	PaginationOutputSchema,
 } from "../../schemas/pagination";
 import { ProductPriceInputSchema } from "../../schemas/product-price-input";
+import { ProductPriceSchema, ProductSchema } from "../products";
 
 // Output schema - product with its active price
 // Note: Uses modifiedAt to match Prisma schema naming

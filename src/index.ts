@@ -1,12 +1,12 @@
 import { checkout } from "./contracts/checkout";
+import {
+	checkouts as mcpCheckouts,
+	customers as mcpCustomers,
+	orders as mcpOrders,
+	products as mcpProducts,
+} from "./contracts/mcp";
 import { onboarding } from "./contracts/onboarding";
 import { products } from "./contracts/products";
-import {
-	customers as mcpCustomers,
-	products as mcpProducts,
-	orders as mcpOrders,
-	checkouts as mcpCheckouts,
-} from "./contracts/mcp";
 
 export type {
 	ConfirmCheckout,
@@ -40,7 +40,10 @@ export { CustomerSchema } from "./schemas/customer";
 export type { Order, OrderItem } from "./schemas/order";
 export { OrderSchema, OrderItemSchema } from "./schemas/order";
 export type { PaginationInput, PaginationOutput } from "./schemas/pagination";
-export { PaginationInputSchema, PaginationOutputSchema } from "./schemas/pagination";
+export {
+	PaginationInputSchema,
+	PaginationOutputSchema,
+} from "./schemas/pagination";
 export type { ProductPriceInput } from "./schemas/product-price-input";
 export { ProductPriceInputSchema } from "./schemas/product-price-input";
 

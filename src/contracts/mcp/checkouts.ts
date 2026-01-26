@@ -1,11 +1,11 @@
 import { oc } from "@orpc/contract";
 import { z } from "zod";
+import { CurrencySchema } from "../../schemas/currency";
+import { CustomerSchema } from "../../schemas/customer";
 import {
 	PaginationInputSchema,
 	PaginationOutputSchema,
 } from "../../schemas/pagination";
-import { CustomerSchema } from "../../schemas/customer";
-import { CurrencySchema } from "../../schemas/currency";
 
 /**
  * Checkout status enum.

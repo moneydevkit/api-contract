@@ -1,11 +1,11 @@
 import { oc } from "@orpc/contract";
 import { z } from "zod";
-import { OrderSchema, OrderItemSchema } from "../../schemas/order";
+import { CustomerSchema } from "../../schemas/customer";
+import { OrderItemSchema, OrderSchema } from "../../schemas/order";
 import {
 	PaginationInputSchema,
 	PaginationOutputSchema,
 } from "../../schemas/pagination";
-import { CustomerSchema } from "../../schemas/customer";
 
 // Order with related data for list view
 const OrderWithRelationsSchema = OrderSchema.extend({

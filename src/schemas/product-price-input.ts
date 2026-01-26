@@ -56,7 +56,7 @@ export const ProductPriceInputSchema = z
 			if (
 				data.priceAmount === undefined ||
 				data.priceAmount === null ||
-				isNaN(data.priceAmount)
+				Number.isNaN(data.priceAmount)
 			) {
 				ctx.addIssue({
 					code: z.ZodIssueCode.custom,
