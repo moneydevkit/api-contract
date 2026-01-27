@@ -2,6 +2,11 @@ import { oc } from "@orpc/contract";
 import { z } from "zod";
 import { CheckoutSchema } from "../schemas/checkout";
 import { CurrencySchema } from "../schemas/currency";
+import { CustomerSchema } from "../schemas/customer";
+import {
+	PaginationInputSchema,
+	PaginationOutputSchema,
+} from "../schemas/pagination";
 
 /**
  * Helper to treat empty strings as undefined (not provided).
@@ -142,10 +147,74 @@ export const paymentReceivedContract = oc
 	.input(PaymentReceivedInputSchema)
 	.output(z.object({ ok: z.boolean() }));
 
+// List checkouts schemas
+const CheckoutStatusSchema = z.enum([
+	"UNCONFIRMED",
+	"CONFIRMED",
+	"PENDING_PAYMENT",
+	"PAYMENT_RECEIVED",
+	"EXPIRED",
+]);
+
+const ListCheckoutsInputSchema = PaginationInputSchema.extend({
+	status: CheckoutStatusSchema.optional(),
+});
+
+const ListCheckoutsOutputSchema = PaginationOutputSchema.extend({
+	checkouts: z.array(CheckoutSchema),
+});
+
+export const listCheckoutsContract = oc
+	.input(ListCheckoutsInputSchema)
+	.output(ListCheckoutsOutputSchema);
+
+// MCP-specific embedded customer schema
+const CheckoutCustomerSchema = CustomerSchema.nullable();
+
+// MCP-specific summary schema for list (simpler than full CheckoutSchema)
+const CheckoutListItemSchema = z.object({
+	id: z.string(),
+	status: CheckoutStatusSchema,
+	type: z.enum(["PRODUCTS", "AMOUNT", "TOP_UP"]),
+	currency: CurrencySchema,
+	totalAmount: z.number().nullable(),
+	customerId: z.string().nullable(),
+	customer: CheckoutCustomerSchema,
+	productId: z.string().nullable(),
+	organizationId: z.string(),
+	expiresAt: z.date(),
+	createdAt: z.date(),
+	modifiedAt: z.date().nullable(),
+});
+
+// MCP-specific detailed schema for get (includes additional fields)
+const CheckoutDetailSchema = CheckoutListItemSchema.extend({
+	userMetadata: z.record(z.unknown()).nullable(),
+	successUrl: z.string().nullable(),
+	discountAmount: z.number().nullable(),
+	netAmount: z.number().nullable(),
+	taxAmount: z.number().nullable(),
+});
+
+const ListCheckoutsSummaryOutputSchema = PaginationOutputSchema.extend({
+	checkouts: z.array(CheckoutListItemSchema),
+});
+
+export const listCheckoutsSummaryContract = oc
+	.input(ListCheckoutsInputSchema)
+	.output(ListCheckoutsSummaryOutputSchema);
+
+export const getCheckoutSummaryContract = oc
+	.input(GetCheckoutInputSchema)
+	.output(CheckoutDetailSchema);
+
 export const checkout = {
 	get: getCheckoutContract,
 	create: createCheckoutContract,
 	confirm: confirmCheckoutContract,
 	registerInvoice: registerInvoiceContract,
 	paymentReceived: paymentReceivedContract,
+	list: listCheckoutsContract,
+	listSummary: listCheckoutsSummaryContract,
+	getSummary: getCheckoutSummaryContract,
 };
