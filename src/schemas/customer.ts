@@ -13,8 +13,8 @@ export const CustomerSubscriptionSchema = z.object({
 	id: z.string(),
 	productId: z.string(),
 	status: SubscriptionStatusSchema,
-	currentPeriodStart: z.string(), // ISO date
-	currentPeriodEnd: z.string(), // ISO date
+	currentPeriodStart: z.string().datetime(),
+	currentPeriodEnd: z.string().datetime(),
 	cancelAtPeriodEnd: z.boolean().optional(),
 	amount: z.number(),
 	currency: CurrencySchema,
@@ -31,7 +31,6 @@ export const CustomerSchema = z.object({
 	name: z.string().nullable().optional(),
 	externalId: z.string().nullable().optional(),
 	subscriptions: z.array(CustomerSubscriptionSchema),
-	hasActiveSubscription: z.boolean(),
 });
 
 /**

@@ -18,13 +18,13 @@ export const SubscriptionSchema = z.object({
 	currency: CurrencySchema,
 	recurringInterval: RecurringIntervalSchema,
 	status: SubscriptionStatusSchema,
-	currentPeriodStart: z.string(), // ISO date
-	currentPeriodEnd: z.string(), // ISO date
+	currentPeriodStart: z.string().datetime(),
+	currentPeriodEnd: z.string().datetime(),
 	cancelAtPeriodEnd: z.boolean().optional(),
-	endsAt: z.string().optional(), // ISO date (if scheduled to end)
-	endedAt: z.string().optional(), // ISO date (if ended)
-	canceledAt: z.string().optional(), // ISO date (if canceled)
-	startedAt: z.string(), // ISO date
+	endsAt: z.string().datetime().optional(),
+	endedAt: z.string().datetime().optional(),
+	canceledAt: z.string().datetime().optional(),
+	startedAt: z.string().datetime(),
 });
 
 export const SubscriptionWebhookEventSchema = z.enum([
