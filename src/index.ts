@@ -84,7 +84,14 @@ export {
 } from "./schemas/product-price-input";
 
 // Unified contract - contains all methods from both SDK and MCP
-export const contract = { checkout, customer, onboarding, order, products, subscription };
+export const contract = {
+	checkout,
+	customer,
+	onboarding,
+	order,
+	products,
+	subscription,
+};
 
 // SDK contract - only the methods the SDK router implements
 export const sdkContract = {
