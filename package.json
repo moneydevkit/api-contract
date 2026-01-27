@@ -21,6 +21,7 @@
 	},
 	"scripts": {
 		"build": "tsup",
+		"prepare": "pnpm run build",
 		"test": "vitest",
 		"check": "biome check ./src --fix"
 	},

@@ -3,6 +3,7 @@ import { customer } from "./contracts/customer";
 import { onboarding } from "./contracts/onboarding";
 import { order } from "./contracts/order";
 import { products } from "./contracts/products";
+import { subscription } from "./contracts/subscription";
 
 export type {
 	ConfirmCheckout,
@@ -19,6 +20,12 @@ export type {
 	StartDeviceAuth as StartDeviceAuthInput,
 	StartDeviceAuthResponse,
 } from "./contracts/onboarding";
+export type {
+	CancelSubscriptionInput,
+	CreateRenewalCheckout,
+	GetSubscriptionInput,
+} from "./contracts/subscription";
+export type { GetCustomerInput } from "./schemas/customer";
 export type { Checkout } from "./schemas/checkout";
 export { CheckoutSchema } from "./schemas/checkout";
 export type { Currency } from "./schemas/currency";
@@ -29,10 +36,33 @@ export {
 	ProductPriceSchema,
 	ListProductsOutputSchema,
 } from "./contracts/products";
+export type {
+	RecurringInterval,
+	Subscription,
+	SubscriptionStatus,
+	SubscriptionWebhookEvent,
+	SubscriptionWebhookPayload,
+} from "./schemas/subscription";
+export {
+	RecurringIntervalSchema,
+	SubscriptionSchema,
+	SubscriptionStatusSchema,
+	SubscriptionWebhookEventSchema,
+	SubscriptionWebhookPayloadSchema,
+} from "./schemas/subscription";
+export type {
+	Customer,
+	CustomerSubscription,
+	McpCustomer,
+} from "./schemas/customer";
+export {
+	CustomerSchema,
+	CustomerSubscriptionSchema,
+	GetCustomerInputSchema,
+	McpCustomerSchema,
+} from "./schemas/customer";
 
 // New MCP schemas
-export type { Customer } from "./schemas/customer";
-export { CustomerSchema } from "./schemas/customer";
 export type { Order, OrderItem, OrderStatus } from "./schemas/order";
 export {
 	OrderSchema,
@@ -54,7 +84,14 @@ export {
 } from "./schemas/product-price-input";
 
 // Unified contract - contains all methods from both SDK and MCP
-export const contract = { checkout, customer, onboarding, order, products };
+export const contract = {
+	checkout,
+	customer,
+	onboarding,
+	order,
+	products,
+	subscription,
+};
 
 // SDK contract - only the methods the SDK router implements
 export const sdkContract = {
@@ -65,10 +102,14 @@ export const sdkContract = {
 		registerInvoice: checkout.registerInvoice,
 		paymentReceived: checkout.paymentReceived,
 	},
+	customer: {
+		get: customer.getSdk,
+	},
 	onboarding,
 	products: {
 		list: products.list,
 	},
+	subscription,
 };
 
 // MCP contract - only the methods the MCP router implements
