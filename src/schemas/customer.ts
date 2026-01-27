@@ -27,7 +27,7 @@ export const CustomerSubscriptionSchema = z.object({
  */
 export const CustomerSchema = z.object({
 	id: z.string(),
-	email: z.string().nullable().optional(),
+	email: z.string(),
 	name: z.string().nullable().optional(),
 	externalId: z.string().nullable().optional(),
 	subscriptions: z.array(CustomerSubscriptionSchema),
