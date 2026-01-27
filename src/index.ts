@@ -1,4 +1,5 @@
 import { checkout } from "./contracts/checkout";
+import { customer } from "./contracts/customer";
 import { onboarding } from "./contracts/onboarding";
 import { products } from "./contracts/products";
 import { subscription } from "./contracts/subscription";
@@ -23,6 +24,7 @@ export type {
 	CreateRenewalCheckout,
 	GetSubscriptionInput,
 } from "./contracts/subscription";
+export type { GetCustomerInput } from "./schemas/customer";
 export type { Checkout } from "./schemas/checkout";
 export { CheckoutSchema } from "./schemas/checkout";
 export type { Currency } from "./schemas/currency";
@@ -47,8 +49,23 @@ export {
 	SubscriptionWebhookEventSchema,
 	SubscriptionWebhookPayloadSchema,
 } from "./schemas/subscription";
+export type {
+	Customer,
+	CustomerSubscription,
+} from "./schemas/customer";
+export {
+	CustomerSchema,
+	CustomerSubscriptionSchema,
+	GetCustomerInputSchema,
+} from "./schemas/customer";
 
-export const contract = { checkout, onboarding, products, subscription };
+export const contract = {
+	checkout,
+	customer,
+	onboarding,
+	products,
+	subscription,
+};
 
 export type { MetadataValidationError } from "./validation/metadata-validation";
 export {
