@@ -1,8 +1,8 @@
 import { oc } from "@orpc/contract";
 import { z } from "zod";
 import { CheckoutSchema } from "../schemas/checkout";
-import { CustomerSchema } from "../schemas/customer";
 import { CurrencySchema } from "../schemas/currency";
+import { CustomerSchema } from "../schemas/customer";
 import {
 	PaginationInputSchema,
 	PaginationOutputSchema,
