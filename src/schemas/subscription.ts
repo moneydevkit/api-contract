@@ -12,7 +12,7 @@ export const RecurringIntervalSchema = z.enum(["MONTH", "QUARTER", "YEAR"]);
 export const SubscriptionSchema = z.object({
 	id: z.string(),
 	customerId: z.string(),
-	customerEmail: z.string(),
+	customerEmail: z.string().nullable(),
 	productId: z.string(),
 	amount: z.number(),
 	currency: CurrencySchema,
