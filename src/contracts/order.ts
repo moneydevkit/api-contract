@@ -7,14 +7,11 @@ import {
 	PaginationOutputSchema,
 } from "../schemas/pagination";
 
-// Order with related data for list view
+// Order with related data for list and get views
 const OrderWithRelationsSchema = OrderSchema.extend({
 	customer: CustomerSchema.nullable(),
 	orderItems: z.array(OrderItemSchema),
 });
-
-// Order with full details for get view
-const OrderDetailSchema = OrderWithRelationsSchema;
 
 const ListOrdersInputSchema = PaginationInputSchema.extend({
 	customerId: z.string().optional(),
@@ -31,7 +28,7 @@ export const listOrdersContract = oc
 
 export const getOrderContract = oc
 	.input(z.object({ id: z.string() }))
-	.output(OrderDetailSchema);
+	.output(OrderWithRelationsSchema);
 
 export const order = {
 	list: listOrdersContract,

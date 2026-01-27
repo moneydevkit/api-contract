@@ -1,6 +1,7 @@
 import { oc } from "@orpc/contract";
 import { z } from "zod";
 import { CheckoutSchema } from "../schemas/checkout";
+import { CustomerSchema } from "../schemas/customer";
 import { CurrencySchema } from "../schemas/currency";
 import {
 	PaginationInputSchema,
@@ -168,19 +169,7 @@ export const listCheckoutsContract = oc
 	.output(ListCheckoutsOutputSchema);
 
 // MCP-specific embedded customer schema
-const CheckoutCustomerSchema = z
-	.object({
-		id: z.string(),
-		name: z.string().nullable(),
-		email: z.string().nullable(),
-		emailVerified: z.boolean(),
-		externalId: z.string().nullable(),
-		userMetadata: z.record(z.unknown()).nullable(),
-		organizationId: z.string(),
-		createdAt: z.date(),
-		modifiedAt: z.date().nullable(),
-	})
-	.nullable();
+const CheckoutCustomerSchema = CustomerSchema.nullable();
 
 // MCP-specific summary schema for list (simpler than full CheckoutSchema)
 const CheckoutListItemSchema = z.object({
