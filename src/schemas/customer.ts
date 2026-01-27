@@ -23,7 +23,7 @@ export const CustomerSubscriptionSchema = z.object({
 
 /**
  * Customer data with their subscriptions.
- * Returned by the customer.get endpoint.
+ * Returned by the SDK customer.get endpoint.
  */
 export const CustomerSchema = z.object({
 	id: z.string(),
@@ -34,7 +34,7 @@ export const CustomerSchema = z.object({
 });
 
 /**
- * Input for getting a customer.
+ * Input for getting a customer via SDK.
  * Requires exactly one of: externalId, email, or customerId.
  */
 export const GetCustomerInputSchema = z
@@ -56,6 +56,24 @@ export const GetCustomerInputSchema = z
 		},
 	);
 
+/**
+ * Customer schema for MCP API responses.
+ * Represents a customer in the organization (admin view).
+ * Note: Uses modifiedAt to match Prisma schema naming.
+ */
+export const McpCustomerSchema = z.object({
+	id: z.string(),
+	name: z.string().nullable(),
+	email: z.string().nullable(),
+	emailVerified: z.boolean(),
+	externalId: z.string().nullable(),
+	userMetadata: z.record(z.string(), z.any()).nullable(),
+	organizationId: z.string(),
+	createdAt: z.date(),
+	modifiedAt: z.date().nullable(),
+});
+
 export type CustomerSubscription = z.infer<typeof CustomerSubscriptionSchema>;
 export type Customer = z.infer<typeof CustomerSchema>;
+export type McpCustomer = z.infer<typeof McpCustomerSchema>;
 export type GetCustomerInput = z.infer<typeof GetCustomerInputSchema>;
