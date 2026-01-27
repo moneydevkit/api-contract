@@ -1,12 +1,14 @@
 {
 	"name": "@moneydevkit/api-contract",
-	"version": "0.1.18",
+	"version": "0.1.19",
 	"description": "API Contract for moneydevkit",
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"type": "module",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"exports": {
 		".": {
 			"import": {
