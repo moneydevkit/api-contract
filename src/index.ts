@@ -102,6 +102,9 @@ export const sdkContract = {
 		registerInvoice: checkout.registerInvoice,
 		paymentReceived: checkout.paymentReceived,
 	},
+	customer: {
+		get: customer.getSdk,
+	},
 	onboarding,
 	products: {
 		list: products.list,
