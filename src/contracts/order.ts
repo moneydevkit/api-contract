@@ -1,15 +1,15 @@
 import { oc } from "@orpc/contract";
 import { z } from "zod";
-import { CustomerSchema } from "../schemas/customer";
+import { McpCustomerSchema } from "../schemas/customer";
 import { OrderItemSchema, OrderSchema } from "../schemas/order";
 import {
 	PaginationInputSchema,
 	PaginationOutputSchema,
 } from "../schemas/pagination";
 
-// Order with related data for list and get views
+// Order with related data for list and get views (MCP uses admin customer schema)
 const OrderWithRelationsSchema = OrderSchema.extend({
-	customer: CustomerSchema.nullable(),
+	customer: McpCustomerSchema.nullable(),
 	orderItems: z.array(OrderItemSchema),
 });
 

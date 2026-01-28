@@ -6,10 +6,16 @@ import { products } from "./contracts/products";
 import { subscription } from "./contracts/subscription";
 
 export type {
+	CheckoutStatus,
+	CheckoutType,
 	ConfirmCheckout,
 	CreateCheckout,
 	PaymentReceived,
 	RegisterInvoice,
+} from "./contracts/checkout";
+export {
+	CheckoutStatusSchema,
+	CheckoutTypeSchema,
 } from "./contracts/checkout";
 export type {
 	BootstrapOnboarding,
@@ -75,10 +81,12 @@ export {
 	PaginationOutputSchema,
 } from "./schemas/pagination";
 export type {
+	PriceAmountType,
 	ProductPriceInput,
 	RecurringIntervalInput,
 } from "./schemas/product-price-input";
 export {
+	PriceAmountTypeSchema,
 	ProductPriceInputSchema,
 	RecurringIntervalInputSchema,
 } from "./schemas/product-price-input";
@@ -102,19 +110,21 @@ export const sdkContract = {
 		registerInvoice: checkout.registerInvoice,
 		paymentReceived: checkout.paymentReceived,
 	},
-	customer: {
-		get: customer.getSdk,
-	},
 	onboarding,
 	products: {
 		list: products.list,
 	},
-	subscription,
 };
 
 // MCP contract - only the methods the MCP router implements
 export const mcpContract = {
-	customer,
+	customer: {
+		list: customer.list,
+		get: customer.get,
+		create: customer.create,
+		update: customer.update,
+		delete: customer.delete,
+	},
 	order,
 	checkout: {
 		list: checkout.listSummary,
