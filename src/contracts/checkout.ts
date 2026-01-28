@@ -148,13 +148,17 @@ export const paymentReceivedContract = oc
 	.output(z.object({ ok: z.boolean() }));
 
 // List checkouts schemas
-const CheckoutStatusSchema = z.enum([
+export const CheckoutStatusSchema = z.enum([
 	"UNCONFIRMED",
 	"CONFIRMED",
 	"PENDING_PAYMENT",
 	"PAYMENT_RECEIVED",
 	"EXPIRED",
 ]);
+export type CheckoutStatus = z.infer<typeof CheckoutStatusSchema>;
+
+export const CheckoutTypeSchema = z.enum(["PRODUCTS", "AMOUNT", "TOP_UP"]);
+export type CheckoutType = z.infer<typeof CheckoutTypeSchema>;
 
 const ListCheckoutsInputSchema = PaginationInputSchema.extend({
 	status: CheckoutStatusSchema.optional(),
@@ -168,14 +172,13 @@ export const listCheckoutsContract = oc
 	.input(ListCheckoutsInputSchema)
 	.output(ListCheckoutsOutputSchema);
 
-// MCP-specific embedded customer schema
 const CheckoutCustomerSchema = CustomerSchema.nullable();
 
 // MCP-specific summary schema for list (simpler than full CheckoutSchema)
 const CheckoutListItemSchema = z.object({
 	id: z.string(),
 	status: CheckoutStatusSchema,
-	type: z.enum(["PRODUCTS", "AMOUNT", "TOP_UP"]),
+	type: CheckoutTypeSchema,
 	currency: CurrencySchema,
 	totalAmount: z.number().nullable(),
 	customerId: z.string().nullable(),
