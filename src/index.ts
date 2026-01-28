@@ -56,16 +56,11 @@ export {
 	SubscriptionWebhookEventSchema,
 	SubscriptionWebhookPayloadSchema,
 } from "./schemas/subscription";
-export type {
-	Customer,
-	CustomerSubscription,
-	McpCustomer,
-} from "./schemas/customer";
+export type { Customer, CustomerWithSubscriptions } from "./schemas/customer";
 export {
 	CustomerSchema,
-	CustomerSubscriptionSchema,
+	CustomerWithSubscriptionsSchema,
 	GetCustomerInputSchema,
-	McpCustomerSchema,
 } from "./schemas/customer";
 
 // New MCP schemas

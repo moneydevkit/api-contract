@@ -2,7 +2,7 @@ import { oc } from "@orpc/contract";
 import { z } from "zod";
 import {
 	CustomerSchema,
-	McpCustomerSchema,
+	CustomerWithSubscriptionsSchema,
 	GetCustomerInputSchema as SdkGetCustomerInputSchema,
 } from "../schemas/customer";
 import {
@@ -13,7 +13,7 @@ import {
 // MCP-specific schemas
 const ListCustomersInputSchema = PaginationInputSchema;
 const ListCustomersOutputSchema = PaginationOutputSchema.extend({
-	customers: z.array(McpCustomerSchema),
+	customers: z.array(CustomerSchema),
 });
 
 const McpGetCustomerInputSchema = z.object({ id: z.string() });
@@ -35,7 +35,7 @@ const DeleteCustomerInputSchema = z.object({ id: z.string() });
 // SDK contract - uses flexible lookup (externalId/email/customerId)
 export const getSdkCustomerContract = oc
 	.input(SdkGetCustomerInputSchema)
-	.output(CustomerSchema);
+	.output(CustomerWithSubscriptionsSchema);
 
 // MCP contracts
 export const listCustomersContract = oc
@@ -44,15 +44,15 @@ export const listCustomersContract = oc
 
 export const getCustomerContract = oc
 	.input(McpGetCustomerInputSchema)
-	.output(McpCustomerSchema);
+	.output(CustomerSchema);
 
 export const createCustomerContract = oc
 	.input(CreateCustomerInputSchema)
-	.output(McpCustomerSchema);
+	.output(CustomerSchema);
 
 export const updateCustomerContract = oc
 	.input(UpdateCustomerInputSchema)
-	.output(McpCustomerSchema);
+	.output(CustomerSchema);
 
 export const deleteCustomerContract = oc
 	.input(DeleteCustomerInputSchema)

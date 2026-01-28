@@ -2,7 +2,7 @@ import { oc } from "@orpc/contract";
 import { z } from "zod";
 import { CheckoutSchema } from "../schemas/checkout";
 import { CurrencySchema } from "../schemas/currency";
-import { McpCustomerSchema } from "../schemas/customer";
+import { CustomerSchema } from "../schemas/customer";
 import {
 	PaginationInputSchema,
 	PaginationOutputSchema,
@@ -173,7 +173,7 @@ export const listCheckoutsContract = oc
 	.output(ListCheckoutsOutputSchema);
 
 // MCP-specific embedded customer schema (uses admin customer schema, not SDK customer)
-const CheckoutCustomerSchema = McpCustomerSchema.nullable();
+const CheckoutCustomerSchema = CustomerSchema.nullable();
 
 // MCP-specific summary schema for list (simpler than full CheckoutSchema)
 const CheckoutListItemSchema = z.object({

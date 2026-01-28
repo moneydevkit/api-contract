@@ -1,36 +1,33 @@
 import { z } from "zod";
-import { CurrencySchema } from "./currency";
-import {
-	RecurringIntervalSchema,
-	SubscriptionStatusSchema,
-} from "./subscription";
+import { SubscriptionSchema } from "./subscription";
 
 /**
- * Summary of a subscription for the customer response.
- * Contains the essential fields needed for displaying subscription status.
+ * Customer schema for API responses.
+ * Represents a customer in the organization (admin view).
+ * Note: Uses modifiedAt to match Prisma schema naming.
  */
-export const CustomerSubscriptionSchema = z.object({
+export const CustomerSchema = z.object({
 	id: z.string(),
-	productId: z.string(),
-	status: SubscriptionStatusSchema,
-	currentPeriodStart: z.string().datetime(),
-	currentPeriodEnd: z.string().datetime(),
-	cancelAtPeriodEnd: z.boolean().optional(),
-	amount: z.number(),
-	currency: CurrencySchema,
-	recurringInterval: RecurringIntervalSchema,
+	name: z.string().nullable(),
+	email: z.string().nullable(),
+	emailVerified: z.boolean(),
+	externalId: z.string().nullable(),
+	userMetadata: z.record(z.string(), z.any()).nullable(),
+	organizationId: z.string(),
+	createdAt: z.date(),
+	modifiedAt: z.date().nullable(),
 });
 
 /**
- * Customer data with their subscriptions.
+ * Customer data with their full subscriptions.
  * Returned by the SDK customer.get endpoint.
  */
-export const CustomerSchema = z.object({
+export const CustomerWithSubscriptionsSchema = z.object({
 	id: z.string(),
 	email: z.string().nullable().optional(),
 	name: z.string().nullable().optional(),
 	externalId: z.string().nullable().optional(),
-	subscriptions: z.array(CustomerSubscriptionSchema),
+	subscriptions: z.array(SubscriptionSchema),
 });
 
 /**
@@ -56,24 +53,8 @@ export const GetCustomerInputSchema = z
 		},
 	);
 
-/**
- * Customer schema for MCP API responses.
- * Represents a customer in the organization (admin view).
- * Note: Uses modifiedAt to match Prisma schema naming.
- */
-export const McpCustomerSchema = z.object({
-	id: z.string(),
-	name: z.string().nullable(),
-	email: z.string().nullable(),
-	emailVerified: z.boolean(),
-	externalId: z.string().nullable(),
-	userMetadata: z.record(z.string(), z.any()).nullable(),
-	organizationId: z.string(),
-	createdAt: z.date(),
-	modifiedAt: z.date().nullable(),
-});
-
-export type CustomerSubscription = z.infer<typeof CustomerSubscriptionSchema>;
 export type Customer = z.infer<typeof CustomerSchema>;
-export type McpCustomer = z.infer<typeof McpCustomerSchema>;
+export type CustomerWithSubscriptions = z.infer<
+	typeof CustomerWithSubscriptionsSchema
+>;
 export type GetCustomerInput = z.infer<typeof GetCustomerInputSchema>;
