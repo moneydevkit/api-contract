@@ -172,7 +172,6 @@ export const listCheckoutsContract = oc
 	.input(ListCheckoutsInputSchema)
 	.output(ListCheckoutsOutputSchema);
 
-// MCP-specific embedded customer schema (uses admin customer schema, not SDK customer)
 const CheckoutCustomerSchema = CustomerSchema.nullable();
 
 // MCP-specific summary schema for list (simpler than full CheckoutSchema)
