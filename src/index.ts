@@ -65,6 +65,7 @@ export {
 	GetCustomerInputSchema,
 	DeleteCustomerInputSchema,
 	CustomerLookupInputSchema,
+	CustomerLookupToolSchema,
 } from "./contracts/customer";
 export type { Checkout } from "./schemas/checkout";
 export { CheckoutSchema } from "./schemas/checkout";
