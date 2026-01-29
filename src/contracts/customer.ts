@@ -31,29 +31,28 @@ export type ListCustomersPaginatedOutput = z.infer<
 	typeof ListCustomersPaginatedOutputSchema
 >;
 
-// Flexible customer lookup - exactly one of id, email, or externalId
-// Base shape without refinement (for MCP tool schemas)
-export const CustomerLookupBaseSchema = z.object({
-	id: z.string().optional().describe("The customer ID"),
-	email: z.string().optional().describe("The customer email address"),
-	externalId: z
-		.string()
-		.optional()
-		.describe("The external ID from your system"),
+// Customer lookup by exactly one identifier (discriminated union for JSON Schema compatibility)
+const CustomerLookupByIdSchema = z.object({
+	id: z.string().describe("The customer ID"),
+});
+const CustomerLookupByEmailSchema = z.object({
+	email: z.string().describe("The customer email address"),
+});
+const CustomerLookupByExternalIdSchema = z.object({
+	externalId: z.string().describe("The external ID from your system"),
 });
 
-// With refinement for runtime validation
-export const CustomerLookupInputSchema = CustomerLookupBaseSchema.refine(
-	(data) => [data.id, data.email, data.externalId].filter(Boolean).length === 1,
-	{ message: "Exactly one of id, email, or externalId must be provided" },
-);
+export const CustomerLookupInputSchema = z.union([
+	CustomerLookupByIdSchema,
+	CustomerLookupByEmailSchema,
+	CustomerLookupByExternalIdSchema,
+]);
 export type CustomerLookupInput = z.infer<typeof CustomerLookupInputSchema>;
 
-// Aliases for specific operations
-export const GetCustomerInputSchema = CustomerLookupBaseSchema;
+export const GetCustomerInputSchema = CustomerLookupInputSchema;
 export type GetCustomerInput = z.infer<typeof GetCustomerInputSchema>;
 
-export const DeleteCustomerInputSchema = CustomerLookupBaseSchema;
+export const DeleteCustomerInputSchema = CustomerLookupInputSchema;
 export type DeleteCustomerInput = z.infer<typeof DeleteCustomerInputSchema>;
 
 export const CreateCustomerInputSchema = z.object({
