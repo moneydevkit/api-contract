@@ -141,7 +141,12 @@ export {
 	OrderItemSchema,
 	OrderStatusSchema,
 } from "./schemas/order";
-export type { IdInput, PaginationInput, PaginatedInput, PaginationOutput } from "./schemas/pagination";
+export type {
+	IdInput,
+	PaginationInput,
+	PaginatedInput,
+	PaginationOutput,
+} from "./schemas/pagination";
 export {
 	IdInputSchema,
 	PaginationInputSchema,

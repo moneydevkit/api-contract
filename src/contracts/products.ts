@@ -1,27 +1,26 @@
 import { oc } from "@orpc/contract";
 import { z } from "zod";
 import { CurrencySchema } from "../schemas/currency";
-import { PaginatedInputSchema, PaginationOutputSchema } from "../schemas/pagination";
+import {
+	PaginatedInputSchema,
+	PaginationOutputSchema,
+} from "../schemas/pagination";
+import {
+	type Product,
+	type ProductDetail,
+	ProductDetailSchema,
+	type ProductPrice,
+	ProductPriceSchema,
+	ProductSchema,
+} from "../schemas/product";
 import {
 	PriceAmountTypeSchema,
 	ProductPriceInputSchema,
 	RecurringIntervalInputSchema,
 } from "../schemas/product-price-input";
-import {
-	ProductSchema,
-	ProductDetailSchema,
-	ProductPriceSchema,
-	type Product,
-	type ProductDetail,
-	type ProductPrice,
-} from "../schemas/product";
 
 // Re-export entity schemas for backwards compatibility
-export {
-	ProductSchema,
-	ProductDetailSchema,
-	ProductPriceSchema,
-};
+export { ProductSchema, ProductDetailSchema, ProductPriceSchema };
 export type { Product, ProductDetail, ProductPrice };
 
 // List output schemas
@@ -33,7 +32,9 @@ export type ListProductsOutput = z.infer<typeof ListProductsOutputSchema>;
 export const ListProductsDetailOutputSchema = PaginationOutputSchema.extend({
 	products: z.array(ProductDetailSchema),
 });
-export type ListProductsDetailOutput = z.infer<typeof ListProductsDetailOutputSchema>;
+export type ListProductsDetailOutput = z.infer<
+	typeof ListProductsDetailOutputSchema
+>;
 
 // Simple list without pagination
 export const listProductsContract = oc
@@ -71,13 +72,20 @@ export type UpdateProductInput = z.infer<typeof UpdateProductInputSchema>;
 export const CreateProductToolInputSchema = z.object({
 	name: z.string().min(1).describe("Product name"),
 	description: z.string().optional().describe("Product description"),
-	priceAmount: z.number().optional().describe(
-		"Price amount (in cents for USD, whole sats for SAT). Required for fixed pricing."
+	priceAmount: z
+		.number()
+		.optional()
+		.describe(
+			"Price amount (in cents for USD, whole sats for SAT). Required for fixed pricing.",
+		),
+	currency: CurrencySchema.optional().describe(
+		"Currency: USD or SAT (default: USD)",
 	),
-	currency: CurrencySchema.optional().describe("Currency: USD or SAT (default: USD)"),
-	amountType: PriceAmountTypeSchema.optional().describe("Amount type: FIXED or CUSTOM (default: FIXED)"),
+	amountType: PriceAmountTypeSchema.optional().describe(
+		"Amount type: FIXED or CUSTOM (default: FIXED)",
+	),
 	recurringInterval: RecurringIntervalInputSchema.optional().describe(
-		"Recurring interval: NEVER (one-time), MONTH, QUARTER, or YEAR (default: NEVER)"
+		"Recurring interval: NEVER (one-time), MONTH, QUARTER, or YEAR (default: NEVER)",
 	),
 });
 
@@ -85,18 +93,25 @@ export const UpdateProductToolInputSchema = z.object({
 	id: z.string().describe("The product ID to update"),
 	name: z.string().optional().describe("New product name"),
 	description: z.string().optional().describe("New product description"),
-	priceAmount: z.number().optional().describe(
-		"New price amount (in cents for USD, whole sats for SAT)"
-	),
+	priceAmount: z
+		.number()
+		.optional()
+		.describe("New price amount (in cents for USD, whole sats for SAT)"),
 	currency: CurrencySchema.optional().describe("Currency: USD or SAT"),
-	amountType: PriceAmountTypeSchema.optional().describe("Amount type: FIXED or CUSTOM"),
+	amountType: PriceAmountTypeSchema.optional().describe(
+		"Amount type: FIXED or CUSTOM",
+	),
 	recurringInterval: RecurringIntervalInputSchema.optional().describe(
-		"Recurring interval: NEVER, MONTH, QUARTER, or YEAR"
+		"Recurring interval: NEVER, MONTH, QUARTER, or YEAR",
 	),
 });
 
-export type CreateProductToolInput = z.infer<typeof CreateProductToolInputSchema>;
-export type UpdateProductToolInput = z.infer<typeof UpdateProductToolInputSchema>;
+export type CreateProductToolInput = z.infer<
+	typeof CreateProductToolInputSchema
+>;
+export type UpdateProductToolInput = z.infer<
+	typeof UpdateProductToolInputSchema
+>;
 
 export const GetProductInputSchema = z.object({
 	id: z.string().describe("The product ID"),
