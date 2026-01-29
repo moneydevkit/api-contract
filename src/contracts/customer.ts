@@ -31,7 +31,7 @@ export type ListCustomersPaginatedOutput = z.infer<
 	typeof ListCustomersPaginatedOutputSchema
 >;
 
-// Customer lookup by exactly one identifier (discriminated union for JSON Schema compatibility)
+// Customer lookup by exactly one identifier (discriminated union for contract validation)
 const CustomerLookupByIdSchema = z.object({
 	id: z.string().describe("The customer ID"),
 });
@@ -48,6 +48,13 @@ export const CustomerLookupInputSchema = z.union([
 	CustomerLookupByExternalIdSchema,
 ]);
 export type CustomerLookupInput = z.infer<typeof CustomerLookupInputSchema>;
+
+// Flat schema for MCP tools (xmcp needs .shape, unions don't have it)
+export const CustomerLookupToolSchema = z.object({
+	id: z.string().optional().describe("The customer ID"),
+	email: z.string().optional().describe("The customer email address"),
+	externalId: z.string().optional().describe("The external ID from your system"),
+});
 
 export const GetCustomerInputSchema = CustomerLookupInputSchema;
 export type GetCustomerInput = z.infer<typeof GetCustomerInputSchema>;
