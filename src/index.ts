@@ -8,6 +8,13 @@ import { subscription } from "./contracts/subscription";
 export type {
 	CheckoutStatus,
 	CheckoutType,
+	CheckoutListItem,
+	CheckoutDetail,
+	ListCheckoutsOutput,
+	ListCheckoutsPaginatedInput,
+	ListCheckoutsPaginatedOutput,
+	ListCheckoutsSummaryOutput,
+	GetCheckoutInput,
 	ConfirmCheckout,
 	CreateCheckout,
 	PaymentReceived,
@@ -16,6 +23,13 @@ export type {
 export {
 	CheckoutStatusSchema,
 	CheckoutTypeSchema,
+	CheckoutListItemSchema,
+	CheckoutDetailSchema,
+	ListCheckoutsOutputSchema,
+	ListCheckoutsPaginatedInputSchema,
+	ListCheckoutsPaginatedOutputSchema,
+	ListCheckoutsSummaryOutputSchema,
+	GetCheckoutInputSchema,
 } from "./contracts/checkout";
 export type {
 	BootstrapOnboarding,
@@ -31,16 +45,59 @@ export type {
 	CreateRenewalCheckout,
 	GetSubscriptionInput,
 } from "./contracts/subscription";
-export type { GetCustomerInput } from "./schemas/customer";
+export type { GetCustomerInput as SdkGetCustomerInput } from "./schemas/customer";
+export type {
+	CreateCustomerInput,
+	UpdateCustomerInput,
+	ListCustomersOutput,
+	ListCustomersPaginatedInput,
+	ListCustomersPaginatedOutput,
+	GetCustomerInput,
+	DeleteCustomerInput,
+	CustomerLookupInput,
+} from "./contracts/customer";
+export {
+	CreateCustomerInputSchema,
+	UpdateCustomerInputSchema,
+	ListCustomersOutputSchema,
+	ListCustomersPaginatedInputSchema,
+	ListCustomersPaginatedOutputSchema,
+	GetCustomerInputSchema,
+	DeleteCustomerInputSchema,
+	CustomerLookupInputSchema,
+	CustomerLookupBaseSchema,
+} from "./contracts/customer";
 export type { Checkout } from "./schemas/checkout";
 export { CheckoutSchema } from "./schemas/checkout";
 export type { Currency } from "./schemas/currency";
 export { CurrencySchema } from "./schemas/currency";
-export type { Product, ProductPrice } from "./contracts/products";
+export type {
+	Product,
+	ProductDetail,
+	ProductPrice,
+	ListProductsOutput,
+	ListProductsDetailOutput,
+	ListProductsInput,
+	GetProductInput,
+	DeleteProductInput,
+	CreateProductInput,
+	UpdateProductInput,
+	CreateProductToolInput,
+	UpdateProductToolInput,
+} from "./contracts/products";
 export {
 	ProductSchema,
+	ProductDetailSchema,
 	ProductPriceSchema,
 	ListProductsOutputSchema,
+	ListProductsDetailOutputSchema,
+	ListProductsInputSchema,
+	GetProductInputSchema,
+	DeleteProductInputSchema,
+	CreateProductInputSchema,
+	UpdateProductInputSchema,
+	CreateProductToolInputSchema,
+	UpdateProductToolInputSchema,
 } from "./contracts/products";
 export type {
 	RecurringInterval,
@@ -60,19 +117,35 @@ export type { Customer, CustomerWithSubscriptions } from "./schemas/customer";
 export {
 	CustomerSchema,
 	CustomerWithSubscriptionsSchema,
-	GetCustomerInputSchema,
+	GetCustomerInputSchema as SdkGetCustomerInputSchema,
 } from "./schemas/customer";
 
 // New MCP schemas
 export type { Order, OrderItem, OrderStatus } from "./schemas/order";
+export type {
+	OrderWithRelations,
+	ListOrdersOutput,
+	ListOrdersPaginatedInput,
+	ListOrdersPaginatedOutput,
+	GetOrderInput,
+} from "./contracts/order";
+export {
+	OrderWithRelationsSchema,
+	ListOrdersOutputSchema,
+	ListOrdersPaginatedInputSchema,
+	ListOrdersPaginatedOutputSchema,
+	GetOrderInputSchema,
+} from "./contracts/order";
 export {
 	OrderSchema,
 	OrderItemSchema,
 	OrderStatusSchema,
 } from "./schemas/order";
-export type { PaginationInput, PaginationOutput } from "./schemas/pagination";
+export type { IdInput, PaginationInput, PaginatedInput, PaginationOutput } from "./schemas/pagination";
 export {
+	IdInputSchema,
 	PaginationInputSchema,
+	PaginatedInputSchema,
 	PaginationOutputSchema,
 } from "./schemas/pagination";
 export type {
@@ -114,18 +187,27 @@ export const sdkContract = {
 // MCP contract - only the methods the MCP router implements
 export const mcpContract = {
 	customer: {
-		list: customer.list,
+		list: customer.listPaginated,
 		get: customer.get,
 		create: customer.create,
 		update: customer.update,
 		delete: customer.delete,
 	},
-	order,
+	order: {
+		list: order.listPaginated,
+		get: order.get,
+	},
 	checkout: {
 		list: checkout.listSummary,
 		get: checkout.getSummary,
 	},
-	products,
+	products: {
+		list: products.listPaginated,
+		get: products.get,
+		create: products.create,
+		update: products.update,
+		delete: products.delete,
+	},
 };
 
 export type { MetadataValidationError } from "./validation/metadata-validation";
@@ -135,3 +217,6 @@ export {
 	MAX_METADATA_SIZE_BYTES,
 	validateMetadata,
 } from "./validation/metadata-validation";
+
+export type { Result } from "./lib/utils";
+export { ok, err } from "./lib/utils";

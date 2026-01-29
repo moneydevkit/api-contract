@@ -49,3 +49,16 @@ export const OrderSchema = z.object({
 });
 
 export type Order = z.infer<typeof OrderSchema>;
+
+// Import CustomerSchema for relations (lazy to avoid circular deps)
+import { CustomerSchema } from "./customer";
+
+/**
+ * Order with related customer and items for detailed views.
+ */
+export const OrderWithRelationsSchema = OrderSchema.extend({
+	customer: CustomerSchema.nullable(),
+	orderItems: z.array(OrderItemSchema),
+});
+
+export type OrderWithRelations = z.infer<typeof OrderWithRelationsSchema>;

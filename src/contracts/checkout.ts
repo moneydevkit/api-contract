@@ -1,16 +1,30 @@
 import { oc } from "@orpc/contract";
 import { z } from "zod";
-import { CheckoutSchema } from "../schemas/checkout";
-import { CurrencySchema } from "../schemas/currency";
-import { CustomerSchema } from "../schemas/customer";
 import {
-	PaginationInputSchema,
-	PaginationOutputSchema,
-} from "../schemas/pagination";
+	CheckoutSchema,
+	CheckoutStatusSchema,
+	CheckoutTypeSchema,
+	CheckoutListItemSchema,
+	CheckoutDetailSchema,
+	type CheckoutStatus,
+	type CheckoutType,
+	type CheckoutListItem,
+	type CheckoutDetail,
+} from "../schemas/checkout";
+import { CurrencySchema } from "../schemas/currency";
+import { PaginatedInputSchema, PaginationOutputSchema } from "../schemas/pagination";
+
+// Re-export entity schemas for backwards compatibility
+export {
+	CheckoutStatusSchema,
+	CheckoutTypeSchema,
+	CheckoutListItemSchema,
+	CheckoutDetailSchema,
+};
+export type { CheckoutStatus, CheckoutType, CheckoutListItem, CheckoutDetail };
 
 /**
  * Helper to treat empty strings as undefined (not provided).
- * This allows clients to pass empty strings without validation errors.
  */
 const emptyStringToUndefined = z
 	.string()
@@ -23,22 +37,12 @@ const emailOrEmpty = z.string().email().optional().or(z.literal(""));
 
 /**
  * Valid fields that can be required at checkout time.
- * - Standard fields: 'email', 'name' (checked against customer.email/name)
- * - Any other string is a custom field (checked against customer[field])
- *
- * @example ['email'] - require email
- * @example ['email', 'name'] - require both email and name
- * @example ['email', 'company'] - require email and company
  */
 export const CustomerFieldSchema = z.string().min(1);
 export type CustomerField = string;
 
 /**
- * Customer data object for checkout.
- * Flat structure - standard fields (name, email, externalId) plus any custom string fields.
- * Empty strings are treated as undefined (not provided).
- *
- * @example { name: "John", email: "john@example.com", externalId: "user_123", company: "Acme" }
+ * Customer data object for checkout input.
  */
 export const CustomerInputSchema = z
 	.object({
@@ -50,6 +54,7 @@ export const CustomerInputSchema = z
 
 export type CustomerInput = z.infer<typeof CustomerInputSchema>;
 
+// Input schemas
 export const CreateCheckoutInputSchema = z.object({
 	nodeId: z.string(),
 	amount: z.number().optional(),
@@ -58,33 +63,13 @@ export const CreateCheckoutInputSchema = z.object({
 	successUrl: z.string().optional(),
 	allowDiscountCodes: z.boolean().optional(),
 	metadata: z.record(z.string(), z.any()).optional(),
-	/**
-	 * Customer data for this checkout.
-	 */
 	customer: CustomerInputSchema.optional(),
-	/**
-	 * Array of customer fields to require at checkout.
-	 * If a field is listed here and not provided, the checkout UI will prompt for it.
-	 * @example ['email'] - require email
-	 * @example ['email', 'name'] - require both
-	 */
 	requireCustomerData: z.array(CustomerFieldSchema).optional(),
 });
 
 export const ConfirmCheckoutInputSchema = z.object({
 	checkoutId: z.string(),
-	/**
-	 * Customer data provided at confirm time.
-	 */
 	customer: CustomerInputSchema.optional(),
-	/**
-	 * Product selection at confirm time.
-	 * - undefined or [] = keep current selection
-	 * - [{ productId }] = change selection to this product
-	 * - priceAmount required if selected price has amountType: CUSTOM
-	 *
-	 * Currently limited to single selection (max 1 item).
-	 */
 	products: z
 		.array(
 			z.object({
@@ -120,25 +105,54 @@ export const PaymentReceivedInputSchema = z.object({
 	),
 });
 
-export const GetCheckoutInputSchema = z.object({ id: z.string() });
+export const GetCheckoutInputSchema = z.object({
+	id: z.string().describe("The checkout ID"),
+});
+export type GetCheckoutInput = z.infer<typeof GetCheckoutInputSchema>;
 
 export type CreateCheckout = z.infer<typeof CreateCheckoutInputSchema>;
 export type ConfirmCheckout = z.infer<typeof ConfirmCheckoutInputSchema>;
 export type RegisterInvoice = z.infer<typeof RegisterInvoiceInputSchema>;
 export type PaymentReceived = z.infer<typeof PaymentReceivedInputSchema>;
 
+// List output schemas
+export const ListCheckoutsOutputSchema = z.object({
+	checkouts: z.array(CheckoutSchema),
+});
+export type ListCheckoutsOutput = z.infer<typeof ListCheckoutsOutputSchema>;
+
+export const ListCheckoutsPaginatedInputSchema = PaginatedInputSchema.extend({
+	status: CheckoutStatusSchema.optional().describe("Filter by status: UNCONFIRMED, CONFIRMED, PENDING_PAYMENT, PAYMENT_RECEIVED, or EXPIRED"),
+});
+export type ListCheckoutsPaginatedInput = z.infer<typeof ListCheckoutsPaginatedInputSchema>;
+
+export const ListCheckoutsPaginatedOutputSchema = PaginationOutputSchema.extend({
+	checkouts: z.array(CheckoutSchema),
+});
+export type ListCheckoutsPaginatedOutput = z.infer<typeof ListCheckoutsPaginatedOutputSchema>;
+
+export const ListCheckoutsSummaryOutputSchema = PaginationOutputSchema.extend({
+	checkouts: z.array(CheckoutListItemSchema),
+});
+export type ListCheckoutsSummaryOutput = z.infer<typeof ListCheckoutsSummaryOutputSchema>;
+
+// Contracts
 export const createCheckoutContract = oc
 	.input(CreateCheckoutInputSchema)
 	.output(CheckoutSchema);
+
 export const applyDiscountCodeContract = oc
 	.input(ApplyDiscountCodeInputSchema)
 	.output(CheckoutSchema);
+
 export const confirmCheckoutContract = oc
 	.input(ConfirmCheckoutInputSchema)
 	.output(CheckoutSchema);
+
 export const registerInvoiceContract = oc
 	.input(RegisterInvoiceInputSchema)
 	.output(CheckoutSchema);
+
 export const getCheckoutContract = oc
 	.input(GetCheckoutInputSchema)
 	.output(CheckoutSchema);
@@ -147,67 +161,19 @@ export const paymentReceivedContract = oc
 	.input(PaymentReceivedInputSchema)
 	.output(z.object({ ok: z.boolean() }));
 
-// List checkouts schemas
-export const CheckoutStatusSchema = z.enum([
-	"UNCONFIRMED",
-	"CONFIRMED",
-	"PENDING_PAYMENT",
-	"PAYMENT_RECEIVED",
-	"EXPIRED",
-]);
-export type CheckoutStatus = z.infer<typeof CheckoutStatusSchema>;
-
-export const CheckoutTypeSchema = z.enum(["PRODUCTS", "AMOUNT", "TOP_UP"]);
-export type CheckoutType = z.infer<typeof CheckoutTypeSchema>;
-
-const ListCheckoutsInputSchema = PaginationInputSchema.extend({
-	status: CheckoutStatusSchema.optional(),
-});
-
-const ListCheckoutsOutputSchema = PaginationOutputSchema.extend({
-	checkouts: z.array(CheckoutSchema),
-});
-
 export const listCheckoutsContract = oc
-	.input(ListCheckoutsInputSchema)
+	.input(z.object({}))
 	.output(ListCheckoutsOutputSchema);
 
-const CheckoutCustomerSchema = CustomerSchema.nullable();
+export const listCheckoutsPaginatedContract = oc
+	.input(ListCheckoutsPaginatedInputSchema)
+	.output(ListCheckoutsPaginatedOutputSchema);
 
-// MCP-specific summary schema for list (simpler than full CheckoutSchema)
-const CheckoutListItemSchema = z.object({
-	id: z.string(),
-	status: CheckoutStatusSchema,
-	type: CheckoutTypeSchema,
-	currency: CurrencySchema,
-	totalAmount: z.number().nullable(),
-	customerId: z.string().nullable(),
-	customer: CheckoutCustomerSchema,
-	productId: z.string().nullable(),
-	organizationId: z.string(),
-	expiresAt: z.date(),
-	createdAt: z.date(),
-	modifiedAt: z.date().nullable(),
-});
-
-// MCP-specific detailed schema for get (includes additional fields)
-const CheckoutDetailSchema = CheckoutListItemSchema.extend({
-	userMetadata: z.record(z.unknown()).nullable(),
-	successUrl: z.string().nullable(),
-	discountAmount: z.number().nullable(),
-	netAmount: z.number().nullable(),
-	taxAmount: z.number().nullable(),
-});
-
-const ListCheckoutsSummaryOutputSchema = PaginationOutputSchema.extend({
-	checkouts: z.array(CheckoutListItemSchema),
-});
-
-export const listCheckoutsSummaryContract = oc
-	.input(ListCheckoutsInputSchema)
+export const listCheckoutsSummaryPaginatedContract = oc
+	.input(ListCheckoutsPaginatedInputSchema)
 	.output(ListCheckoutsSummaryOutputSchema);
 
-export const getCheckoutSummaryContract = oc
+export const getCheckoutDetailContract = oc
 	.input(GetCheckoutInputSchema)
 	.output(CheckoutDetailSchema);
 
@@ -218,6 +184,8 @@ export const checkout = {
 	registerInvoice: registerInvoiceContract,
 	paymentReceived: paymentReceivedContract,
 	list: listCheckoutsContract,
-	listSummary: listCheckoutsSummaryContract,
-	getSummary: getCheckoutSummaryContract,
+	listPaginated: listCheckoutsPaginatedContract,
+	// Original names preserved
+	listSummary: listCheckoutsSummaryPaginatedContract,
+	getSummary: getCheckoutDetailContract,
 };
