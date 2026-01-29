@@ -25,8 +25,14 @@ export type PaginationInput = z.infer<typeof PaginationInputSchema>;
  * Use .extend() to add entity-specific filters.
  */
 export const PaginatedInputSchema = z.object({
-	limit: z.number().optional().describe("Maximum number of items to return (1-100, default 50)"),
-	cursor: z.string().optional().describe("Cursor for pagination (from previous response)"),
+	limit: z
+		.number()
+		.optional()
+		.describe("Maximum number of items to return (1-100, default 50)"),
+	cursor: z
+		.string()
+		.optional()
+		.describe("Cursor for pagination (from previous response)"),
 });
 
 export type PaginatedInput = z.infer<typeof PaginatedInputSchema>;

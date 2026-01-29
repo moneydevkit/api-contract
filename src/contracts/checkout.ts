@@ -1,18 +1,21 @@
 import { oc } from "@orpc/contract";
 import { z } from "zod";
 import {
-	CheckoutSchema,
-	CheckoutStatusSchema,
-	CheckoutTypeSchema,
-	CheckoutListItemSchema,
-	CheckoutDetailSchema,
-	type CheckoutStatus,
-	type CheckoutType,
-	type CheckoutListItem,
 	type CheckoutDetail,
+	CheckoutDetailSchema,
+	type CheckoutListItem,
+	CheckoutListItemSchema,
+	CheckoutSchema,
+	type CheckoutStatus,
+	CheckoutStatusSchema,
+	type CheckoutType,
+	CheckoutTypeSchema,
 } from "../schemas/checkout";
 import { CurrencySchema } from "../schemas/currency";
-import { PaginatedInputSchema, PaginationOutputSchema } from "../schemas/pagination";
+import {
+	PaginatedInputSchema,
+	PaginationOutputSchema,
+} from "../schemas/pagination";
 
 // Re-export entity schemas for backwards compatibility
 export {
@@ -122,19 +125,29 @@ export const ListCheckoutsOutputSchema = z.object({
 export type ListCheckoutsOutput = z.infer<typeof ListCheckoutsOutputSchema>;
 
 export const ListCheckoutsPaginatedInputSchema = PaginatedInputSchema.extend({
-	status: CheckoutStatusSchema.optional().describe("Filter by status: UNCONFIRMED, CONFIRMED, PENDING_PAYMENT, PAYMENT_RECEIVED, or EXPIRED"),
+	status: CheckoutStatusSchema.optional().describe(
+		"Filter by status: UNCONFIRMED, CONFIRMED, PENDING_PAYMENT, PAYMENT_RECEIVED, or EXPIRED",
+	),
 });
-export type ListCheckoutsPaginatedInput = z.infer<typeof ListCheckoutsPaginatedInputSchema>;
+export type ListCheckoutsPaginatedInput = z.infer<
+	typeof ListCheckoutsPaginatedInputSchema
+>;
 
-export const ListCheckoutsPaginatedOutputSchema = PaginationOutputSchema.extend({
-	checkouts: z.array(CheckoutSchema),
-});
-export type ListCheckoutsPaginatedOutput = z.infer<typeof ListCheckoutsPaginatedOutputSchema>;
+export const ListCheckoutsPaginatedOutputSchema = PaginationOutputSchema.extend(
+	{
+		checkouts: z.array(CheckoutSchema),
+	},
+);
+export type ListCheckoutsPaginatedOutput = z.infer<
+	typeof ListCheckoutsPaginatedOutputSchema
+>;
 
 export const ListCheckoutsSummaryOutputSchema = PaginationOutputSchema.extend({
 	checkouts: z.array(CheckoutListItemSchema),
 });
-export type ListCheckoutsSummaryOutput = z.infer<typeof ListCheckoutsSummaryOutputSchema>;
+export type ListCheckoutsSummaryOutput = z.infer<
+	typeof ListCheckoutsSummaryOutputSchema
+>;
 
 // Contracts
 export const createCheckoutContract = oc

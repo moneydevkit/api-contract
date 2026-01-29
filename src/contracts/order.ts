@@ -1,10 +1,13 @@
 import { oc } from "@orpc/contract";
 import { z } from "zod";
 import {
-	OrderWithRelationsSchema,
 	type OrderWithRelations,
+	OrderWithRelationsSchema,
 } from "../schemas/order";
-import { PaginatedInputSchema, PaginationOutputSchema } from "../schemas/pagination";
+import {
+	PaginatedInputSchema,
+	PaginationOutputSchema,
+} from "../schemas/pagination";
 
 // Re-export entity schema for backwards compatibility
 export { OrderWithRelationsSchema };
@@ -18,14 +21,21 @@ export type ListOrdersOutput = z.infer<typeof ListOrdersOutputSchema>;
 
 export const ListOrdersPaginatedInputSchema = PaginatedInputSchema.extend({
 	customerId: z.string().optional().describe("Filter by customer ID"),
-	status: z.string().optional().describe("Filter by status: PENDING, PAID, REFUNDED, or CANCELLED"),
+	status: z
+		.string()
+		.optional()
+		.describe("Filter by status: PENDING, PAID, REFUNDED, or CANCELLED"),
 });
-export type ListOrdersPaginatedInput = z.infer<typeof ListOrdersPaginatedInputSchema>;
+export type ListOrdersPaginatedInput = z.infer<
+	typeof ListOrdersPaginatedInputSchema
+>;
 
 export const ListOrdersPaginatedOutputSchema = PaginationOutputSchema.extend({
 	orders: z.array(OrderWithRelationsSchema),
 });
-export type ListOrdersPaginatedOutput = z.infer<typeof ListOrdersPaginatedOutputSchema>;
+export type ListOrdersPaginatedOutput = z.infer<
+	typeof ListOrdersPaginatedOutputSchema
+>;
 
 export const GetOrderInputSchema = z.object({
 	id: z.string().describe("The order ID"),
