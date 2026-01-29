@@ -27,7 +27,10 @@ export type PaginationInput = z.infer<typeof PaginationInputSchema>;
 export const PaginatedInputSchema = z.object({
 	limit: z
 		.number()
-		.optional()
+		.int()
+		.min(1)
+		.max(100)
+		.default(50)
 		.describe("Maximum number of items to return (1-100, default 50)"),
 	cursor: z
 		.string()
