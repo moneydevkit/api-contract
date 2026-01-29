@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { CurrencySchema } from "./currency";
+import { CustomerSchema } from "./customer";
 import {
 	BaseInvoiceSchema,
 	DynamicAmountPendingInvoiceSchema,
@@ -189,3 +190,43 @@ export const CheckoutSchema = z.union([
 ]);
 
 export type Checkout = z.infer<typeof CheckoutSchema>;
+
+// Simple enum schemas for filtering/display
+export const CheckoutStatusSchema = z.enum([
+	"UNCONFIRMED",
+	"CONFIRMED",
+	"PENDING_PAYMENT",
+	"PAYMENT_RECEIVED",
+	"EXPIRED",
+]);
+export type CheckoutStatus = z.infer<typeof CheckoutStatusSchema>;
+
+export const CheckoutTypeSchema = z.enum(["PRODUCTS", "AMOUNT", "TOP_UP"]);
+export type CheckoutType = z.infer<typeof CheckoutTypeSchema>;
+
+// Summary schema for list views (lighter than full CheckoutSchema)
+export const CheckoutListItemSchema = z.object({
+	id: z.string(),
+	status: CheckoutStatusSchema,
+	type: CheckoutTypeSchema,
+	currency: CurrencySchema,
+	totalAmount: z.number().nullable(),
+	customerId: z.string().nullable(),
+	customer: CustomerSchema.nullable(),
+	productId: z.string().nullable(),
+	organizationId: z.string(),
+	expiresAt: z.date(),
+	createdAt: z.date(),
+	modifiedAt: z.date().nullable(),
+});
+export type CheckoutListItem = z.infer<typeof CheckoutListItemSchema>;
+
+// Detail schema (includes additional fields beyond list item)
+export const CheckoutDetailSchema = CheckoutListItemSchema.extend({
+	userMetadata: z.record(z.unknown()).nullable(),
+	successUrl: z.string().nullable(),
+	discountAmount: z.number().nullable(),
+	netAmount: z.number().nullable(),
+	taxAmount: z.number().nullable(),
+});
+export type CheckoutDetail = z.infer<typeof CheckoutDetailSchema>;

@@ -1,36 +1,52 @@
 import { oc } from "@orpc/contract";
 import { z } from "zod";
-import { CustomerSchema } from "../schemas/customer";
-import { OrderItemSchema, OrderSchema } from "../schemas/order";
 import {
-	PaginationInputSchema,
-	PaginationOutputSchema,
-} from "../schemas/pagination";
+	OrderWithRelationsSchema,
+	type OrderWithRelations,
+} from "../schemas/order";
+import { PaginatedInputSchema, PaginationOutputSchema } from "../schemas/pagination";
 
-// Order with related data for list and get views
-const OrderWithRelationsSchema = OrderSchema.extend({
-	customer: CustomerSchema.nullable(),
-	orderItems: z.array(OrderItemSchema),
-});
+// Re-export entity schema for backwards compatibility
+export { OrderWithRelationsSchema };
+export type { OrderWithRelations };
 
-const ListOrdersInputSchema = PaginationInputSchema.extend({
-	customerId: z.string().optional(),
-	status: z.string().optional(), // Prisma uses String type for status
-});
-
-const ListOrdersOutputSchema = PaginationOutputSchema.extend({
+// List output schemas
+export const ListOrdersOutputSchema = z.object({
 	orders: z.array(OrderWithRelationsSchema),
 });
+export type ListOrdersOutput = z.infer<typeof ListOrdersOutputSchema>;
 
+export const ListOrdersPaginatedInputSchema = PaginatedInputSchema.extend({
+	customerId: z.string().optional().describe("Filter by customer ID"),
+	status: z.string().optional().describe("Filter by status: PENDING, PAID, REFUNDED, or CANCELLED"),
+});
+export type ListOrdersPaginatedInput = z.infer<typeof ListOrdersPaginatedInputSchema>;
+
+export const ListOrdersPaginatedOutputSchema = PaginationOutputSchema.extend({
+	orders: z.array(OrderWithRelationsSchema),
+});
+export type ListOrdersPaginatedOutput = z.infer<typeof ListOrdersPaginatedOutputSchema>;
+
+export const GetOrderInputSchema = z.object({
+	id: z.string().describe("The order ID"),
+});
+export type GetOrderInput = z.infer<typeof GetOrderInputSchema>;
+
+// Contracts
 export const listOrdersContract = oc
-	.input(ListOrdersInputSchema)
+	.input(z.object({}))
 	.output(ListOrdersOutputSchema);
 
+export const listOrdersPaginatedContract = oc
+	.input(ListOrdersPaginatedInputSchema)
+	.output(ListOrdersPaginatedOutputSchema);
+
 export const getOrderContract = oc
-	.input(z.object({ id: z.string() }))
+	.input(GetOrderInputSchema)
 	.output(OrderWithRelationsSchema);
 
 export const order = {
 	list: listOrdersContract,
+	listPaginated: listOrdersPaginatedContract,
 	get: getOrderContract,
 };
