@@ -53,7 +53,10 @@ export type CustomerLookupInput = z.infer<typeof CustomerLookupInputSchema>;
 export const CustomerLookupToolSchema = z.object({
 	id: z.string().optional().describe("The customer ID"),
 	email: z.string().optional().describe("The customer email address"),
-	externalId: z.string().optional().describe("The external ID from your system"),
+	externalId: z
+		.string()
+		.optional()
+		.describe("The external ID from your system"),
 });
 
 export const GetCustomerInputSchema = CustomerLookupInputSchema;
