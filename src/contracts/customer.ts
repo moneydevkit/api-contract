@@ -59,10 +59,10 @@ export const CustomerLookupToolSchema = z.object({
 		.describe("The external ID from your system"),
 });
 
-export const GetCustomerInputSchema = CustomerLookupInputSchema;
+export const GetCustomerInputSchema = CustomerLookupToolSchema;
 export type GetCustomerInput = z.infer<typeof GetCustomerInputSchema>;
 
-export const DeleteCustomerInputSchema = CustomerLookupInputSchema;
+export const DeleteCustomerInputSchema = CustomerLookupToolSchema;
 export type DeleteCustomerInput = z.infer<typeof DeleteCustomerInputSchema>;
 
 export const CreateCustomerInputSchema = z.object({
