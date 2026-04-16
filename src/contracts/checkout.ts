@@ -118,6 +118,21 @@ export const RedeemL402InputSchema = z.object({
 });
 export type RedeemL402Input = z.infer<typeof RedeemL402InputSchema>;
 
+/**
+ * Input for mintInvoice. Replaces the legacy two-step "merchant mints locally
+ * + calls registerInvoice" flow. mdk.com mints the invoice on behalf of the
+ * merchant by routing the request to whichever node currently holds the WS
+ * lease for the merchant's app, eliminating dual-node races.
+ *
+ * expirySecs is optional; if omitted the server defaults to 15 minutes (the
+ * value the legacy local-mint paths used).
+ */
+export const MintInvoiceInputSchema = z.object({
+	checkoutId: z.string(),
+	expirySecs: z.number().int().positive().optional(),
+});
+export type MintInvoice = z.infer<typeof MintInvoiceInputSchema>;
+
 export const RedeemL402OutputSchema = z.object({
 	redeemed: z.boolean(),
 	reason: z.string().optional(),
@@ -205,11 +220,16 @@ export const redeemL402Contract = oc
 	.input(RedeemL402InputSchema)
 	.output(RedeemL402OutputSchema);
 
+export const mintInvoiceContract = oc
+	.input(MintInvoiceInputSchema)
+	.output(CheckoutSchema);
+
 export const checkout = {
 	get: getCheckoutContract,
 	create: createCheckoutContract,
 	confirm: confirmCheckoutContract,
 	registerInvoice: registerInvoiceContract,
+	mintInvoice: mintInvoiceContract,
 	paymentReceived: paymentReceivedContract,
 	redeemL402: redeemL402Contract,
 	list: listCheckoutsContract,
