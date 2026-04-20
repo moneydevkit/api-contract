@@ -113,6 +113,21 @@ export const GetCheckoutInputSchema = z.object({
 });
 export type GetCheckoutInput = z.infer<typeof GetCheckoutInputSchema>;
 
+/**
+ * Input for mintInvoice. Replaces the legacy two-step "merchant mints locally
+ * + calls registerInvoice" flow. mdk.com mints the invoice on behalf of the
+ * merchant by routing the request to whichever node currently holds the WS
+ * lease for the merchant's app, eliminating dual-node races.
+ *
+ * expirySecs is optional; if omitted the server defaults to 15 minutes (the
+ * value the legacy local-mint paths used).
+ */
+export const MintInvoiceInputSchema = z.object({
+	checkoutId: z.string(),
+	expirySecs: z.number().int().positive().optional(),
+});
+export type MintInvoice = z.infer<typeof MintInvoiceInputSchema>;
+
 export type CreateCheckout = z.infer<typeof CreateCheckoutInputSchema>;
 export type ConfirmCheckout = z.infer<typeof ConfirmCheckoutInputSchema>;
 export type RegisterInvoice = z.infer<typeof RegisterInvoiceInputSchema>;
@@ -190,11 +205,16 @@ export const getCheckoutDetailContract = oc
 	.input(GetCheckoutInputSchema)
 	.output(CheckoutDetailSchema);
 
+export const mintInvoiceContract = oc
+	.input(MintInvoiceInputSchema)
+	.output(CheckoutSchema);
+
 export const checkout = {
 	get: getCheckoutContract,
 	create: createCheckoutContract,
 	confirm: confirmCheckoutContract,
 	registerInvoice: registerInvoiceContract,
+	mintInvoice: mintInvoiceContract,
 	paymentReceived: paymentReceivedContract,
 	list: listCheckoutsContract,
 	listPaginated: listCheckoutsPaginatedContract,
